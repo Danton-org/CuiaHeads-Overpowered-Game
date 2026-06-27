@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>TPEventSheet</name>
+    <events>
+        <variable comment="Segundos para spawnar algum bicho (quanto menor = mais bicho)" constant="0" name="TempoDeSpawn" sid="289716551127425" static="0" type="number">0.3</variable>
+        <variable comment="Variável para o dano da espada do gatinho" constant="0" name="EspadaDMG" sid="923426593908049" static="0" type="number">5</variable>
+        <variable comment="Variável para a velocidade da espada do gatinho (quanto menor = mais rápido)" constant="0" name="EspadaVEL" sid="674732805334792" static="0" type="number">0.3</variable>
+        <variable comment="Variável para o TAMANHO DA ESPADA do gatinho" constant="0" name="TamEspada" sid="479047419099836" static="0" type="number">5</variable>
+        <variable comment="Variável para a vida do gatinho" constant="0" name="Vida" sid="439744639138286" static="0" type="number">500</variable>
+        <event-group description="" sid="402439171710115" title="Controles">
+            <sub-events>
+                <event-block sid="978356872738768">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="231515660759249" type="Keyboard">
+                            <param id="0" name="Key">65</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="698050946196359" type="GatinhoCollision">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="249228623018006">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="321472341264547" type="Keyboard">
+                            <param id="0" name="Key">87</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="855294984506334" type="GatinhoCollision">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="303371201931930">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="564617965259987" type="Keyboard">
+                            <param id="0" name="Key">83</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="783279797448552" type="GatinhoCollision">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="232362797310421">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="707857290926361" type="Keyboard">
+                            <param id="0" name="Key">68</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="285517406963005" type="GatinhoCollision">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="823230964658126">
+                    <conditions>
+                        <condition id="0" name="On click" sid="456385053323560" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="612446167961932" type="System">
+                            <param id="0" name="Object to create">Espada</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">GatinhoCollision.X</param>
+                            <param id="3" name="Y">GatinhoCollision.Y</param>
+                        </action>
+                        <action id="-22" name="Set angle toward position" sid="182549238893454" type="Espada">
+                            <param id="0" name="X">Mouse.X</param>
+                            <param id="1" name="Y">Mouse.Y</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="192030522330746" type="System">
+                            <param id="0" name="Seconds">EspadaVEL</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="247532859834469" type="Espada" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="362403024548947" title="SistemaInimigo">
+            <sub-events>
+                <event-block sid="627206080517388">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="638351099691874" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-23" name="Move at angle" sid="648063338152993" type="InimigoCollision">
+                            <param id="0" name="Angle">angle(Self.X, Self.Y, GatinhoCollision.X, GatinhoCollision.Y)</param>
+                            <param id="1" name="Distance">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="186781588076072">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="928026961932137" type="Espada">
+                            <param id="0" name="Object">InimigoCollision</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="690152074826541" type="InimigoCollision">
+                            <param id="0" name="Instance variable">InimigoVida</param>
+                            <param id="1" name="Value">EspadaDMG</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="616008592516565" type="System">
+                            <param id="0" name="Seconds">EspadaVEL</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="676006985964503" type="Espada" />
+                    </actions>
+                </event-block>
+                <event-block sid="692785554623446">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="188942198958808" type="InimigoCollision">
+                            <param id="0" name="Instance variable">InimigoVida</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="468351130981301" type="InimigoCollision" />
+                    </actions>
+                </event-block>
+                <event-block sid="304278794219465">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="178411179169282" type="InimigoCollision">
+                            <param id="0" name="Object">GatinhoCollision</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="618806463871474" type="System">
+                            <param id="0" name="Variable">Vida</param>
+                            <param id="1" name="Value">InimigoCollision.InimigoDano</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="318817541762017" title="Condições do Sistema">
+            <sub-events>
+                <event-block sid="266462414045678">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="629432155179071" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="602041887194345" type="GatinhoCollision">
+                            <param id="0" name="X">1344</param>
+                            <param id="1" name="Y">1216</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="699888663025148">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="664429673596260" type="System">
+                            <param id="0" name="Variable">Vida</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="490347946934616" type="GatinhoCollision" />
+                    </actions>
+                </event-block>
+                <event-block sid="896282469204256">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="217765584173967" type="System">
+                            <param id="0" name="Interval (seconds)">TempoDeSpawn</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="711300215142905" type="System">
+                            <param id="0" name="Object to create">InimigoCollision</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">GatinhoCollision.X + cos(random(360)) * random(800, 1000)</param>
+                            <param id="3" name="Y">GatinhoCollision.Y + sin(random(360)) * random(800, 1000)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

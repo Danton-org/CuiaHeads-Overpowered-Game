@@ -10,8 +10,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="0">Layout 1</layout>
-        <event-sheet order="1">Event sheet 1</event-sheet>
+        <layout active="1" order="0">TopDown</layout>
+        <event-sheet order="1">TPEventSheet</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -20,11 +20,15 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="1" name="Configuration Settings" />
     </properties>
     <families-expanded root="1">
-        <family expanded="1" name="Cartas" />
+        <family expanded="0" name="Cartas" />
     </families-expanded>
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
         <folder expanded="0" path="object-folder/SpriteCartas/" />
+        <folder expanded="0" path="object-folder/TopDown/" />
+        <folder expanded="1" path="object-folder/HUD/" />
+        <folder expanded="1" path="object-folder/HUD/JogoMemoria/" />
+        <folder expanded="1" path="object-folder/HUD/TopDown/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="file-folder/" />
@@ -41,6 +45,11 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Carta08/" />
         <folder expanded="1" path="animation-folder/Carta09/" />
         <folder expanded="1" path="animation-folder/Carta10/" />
+        <folder expanded="1" path="animation-folder/Espada/" />
+        <folder expanded="1" path="animation-folder/GatinhoSprite/" />
+        <folder expanded="1" path="animation-folder/GatinhoCollision/" />
+        <folder expanded="1" path="animation-folder/InimigoCollision/" />
+        <folder expanded="1" path="animation-folder/Parede/" />
         <folder expanded="1" path="animation-folder/Area/" />
         <folder expanded="1" path="animation-folder/BuffsArea/" />
         <folder expanded="1" path="animation-folder/StartButton/" />

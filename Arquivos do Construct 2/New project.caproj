@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>New project</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>22jpz9j55nk2f</unique-id>
+    <saved-with-version>28000</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="lunarray" id="lunarray_LiteTween" version="1.700000048">LiteTween</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>854</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="SpriteCartas">
+            <object-type name="Carta01" sid="692868252982557">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="787808989318437" speed="0">
+                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Fundo.png" />
+                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Carta02" sid="693008094852429">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="897423839019234" speed="0">
+                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Fundo.png" />
+                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Carta03" sid="518975884797755">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="198748616571952" speed="0">
+                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Fundo.png" />
+                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Carta04" sid="110556825621303">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="789866543081622" speed="0">
+                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Fundo.png" />
+                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Carta05" sid="433960558938960">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="670238889556338" speed="0">
+                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Fundo.png" />
+                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Carta06" sid="952131374913335">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="748869078598690" speed="0">
+                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Fundo.png" />
+                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Carta07" sid="659562675867381">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="778905920162846" speed="0">
+                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Fundo.png" />
+                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Carta08" sid="351916009340725">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="898781544920480" speed="0">
+                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Fundo.png" />
+                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Carta09" sid="324476051413173">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="497236607157864" speed="0">
+                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Fundo.png" />
+                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Carta10" sid="311776595603649">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="364295833664558" speed="0">
+                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Fundo.png" />
+                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-type name="Mouse" sid="647187985110911">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Area" sid="390166634574758">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="734544187178420" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BuffsArea" sid="592053075930042">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="262840930779029" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="StartButton" sid="569014758192685">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="805523690155145" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SpawnCartas" sid="406041295283111">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="385509870315799" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="Cartas" plugin-id="Sprite" sid="960025214567832">
+            <members>
+                <member>Carta01</member>
+                <member>Carta02</member>
+                <member>Carta03</member>
+                <member>Carta04</member>
+                <member>Carta05</member>
+                <member>Carta06</member>
+                <member>Carta07</member>
+                <member>Carta08</member>
+                <member>Carta09</member>
+                <member>Carta10</member>
+            </members>
+            <instance-variables>
+                <instance-variable comment="0 (costas); 1 (virada); 2 (acertou)" name="EstaVirado" sid="306146759002350" type="number" />
+                <instance-variable comment="ID de cada PAR DE CARTAS" name="ID" sid="262001297182014" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="LiteTween" sid="935360198747828">
+                    <behavior id="lunarray_LiteTween" />
+                </behavior-type>
+            </behaviors>
+        </family>
+    </families>
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Mouse" uid="1" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

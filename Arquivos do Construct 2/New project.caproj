@@ -271,6 +271,53 @@
                 </object-type>
             </object-folder>
         </object-folder>
+        <object-folder name="Cartas">
+            <object-type name="CartaV2" sid="847664055112451">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="ID" sid="872210219082774" type="number" />
+                    <instance-variable name="Frame" sid="181373378757566" type="number" />
+                    <instance-variable name="EstáVirada" sid="141055570429934" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="LiteTween" sid="743516546604043">
+                        <behavior id="lunarray_LiteTween" />
+                    </behavior-type>
+                    <behavior-type name="Sine" sid="367053543717738">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                    <behavior-type name="Sine2" sid="154026841214021">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="6" loop="0" name="Frente" pingpong="0" repeatcount="1" repeatto="0" sid="181588646637604" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\CartaFund.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta_de_Armadura.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de Alcance.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de Força.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de Ataque speed.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de vida.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Sprite" sid="166844672112563">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="887082707877389">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                    <behavior-type name="Sine2" sid="949635420909696">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="574244623308105" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
         <object-type name="Mouse" sid="647187985110911">
             <plugin id="Mouse" />
         </object-type>
@@ -279,51 +326,6 @@
         </object-type>
         <object-type name="SVGImage" sid="820759492291505">
             <plugin id="SVGImage" />
-        </object-type>
-        <object-type name="CartaV2" sid="847664055112451">
-            <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable name="ID" sid="872210219082774" type="number" />
-                <instance-variable name="Frame" sid="181373378757566" type="number" />
-                <instance-variable name="EstáVirada" sid="141055570429934" type="boolean" />
-            </instance-variables>
-            <behaviors>
-                <behavior-type name="LiteTween" sid="743516546604043">
-                    <behavior id="lunarray_LiteTween" />
-                </behavior-type>
-                <behavior-type name="Sine" sid="367053543717738">
-                    <behavior id="Sin" />
-                </behavior-type>
-                <behavior-type name="Sine2" sid="154026841214021">
-                    <behavior id="Sin" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="6" loop="0" name="Frente" pingpong="0" repeatcount="1" repeatto="0" sid="181588646637604" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\CartaFund.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta_de_Armadura.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de Alcance.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de Força.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de Ataque speed.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de vida.png" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="Sprite" sid="166844672112563">
-            <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Sine" sid="887082707877389">
-                    <behavior id="Sin" />
-                </behavior-type>
-                <behavior-type name="Sine2" sid="949635420909696">
-                    <behavior id="Sin" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="574244623308105" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
         </object-type>
     </object-folder>
     <families />

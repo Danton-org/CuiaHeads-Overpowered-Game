@@ -65,48 +65,50 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="823230964658126">
+                <event-block sid="562209673658866">
                     <conditions>
-                        <condition id="0" name="On click" sid="456385053323560" type="Mouse">
+                        <condition id="2" name="Mouse button is down" sid="899465532793987" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
-                            <param id="1" name="Click type">0</param>
-                        </condition>
-                        <condition id="-8" name="Compare two values" sid="357884415272974" type="System">
-                            <param id="0" name="First value">timescale</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Second value">1</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-3" name="Create object" sid="612446167961932" type="System">
-                            <param id="0" name="Object to create">Espada</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="X">GatinhoCollision.X</param>
-                            <param id="3" name="Y">GatinhoCollision.Y</param>
+                        <action id="11" name="Set collisions enabled" sid="232200606944192" type="Espada">
+                            <param id="0" name="Collisions">1</param>
                         </action>
-                        <action id="-3" name="Create object" sid="935191708208778" type="System">
-                            <param id="0" name="Object to create">Sword</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="X">GatinhoCollision.X</param>
-                            <param id="3" name="Y">GatinhoCollision.Y</param>
+                        <action id="-15" name="Set visible" sid="423966900185164" type="Sword">
+                            <param id="0" name="Visibility">1</param>
                         </action>
-                        <action behavior="Pin" id="0" name="Pin to object" sid="552405022924868" type="Sword">
-                            <param id="0" name="Pin to">Espada</param>
-                            <param id="1" name="Mode">0</param>
+                        <action id="-3" name="Set position" sid="389361368470170" type="Espada">
+                            <param id="0" name="X">GatinhoCollision.X</param>
+                            <param id="1" name="Y">GatinhoCollision.Y</param>
                         </action>
-                        <action id="-22" name="Set angle toward position" sid="182549238893454" type="Espada">
+                        <action id="-3" name="Set position" sid="843923808058579" type="Sword">
+                            <param id="0" name="X">GatinhoCollision.X</param>
+                            <param id="1" name="Y">GatinhoCollision.Y</param>
+                        </action>
+                        <action id="-22" name="Set angle toward position" sid="375806706433345" type="Espada">
                             <param id="0" name="X">Mouse.X</param>
                             <param id="1" name="Y">Mouse.Y</param>
                         </action>
-                        <action id="-22" name="Set angle toward position" sid="675416777964978" type="Sword">
+                        <action id="-22" name="Set angle toward position" sid="648151147601956" type="Sword">
                             <param id="0" name="X">Mouse.X</param>
                             <param id="1" name="Y">Mouse.Y</param>
                         </action>
-                        <action id="-16" name="Wait" sid="192030522330746" type="System">
-                            <param id="0" name="Seconds">EspadaVEL</param>
+                    </actions>
+                </event-block>
+                <event-block sid="638790991903452">
+                    <conditions>
+                        <condition id="3" name="On button released" sid="431918446604756" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="11" name="Set collisions enabled" sid="128076187181848" type="Espada">
+                            <param id="0" name="Collisions">0</param>
                         </action>
-                        <action id="-9" name="Destroy" sid="247532859834469" type="Espada" />
-                        <action id="-9" name="Destroy" sid="178421055156168" type="Sword" />
+                        <action id="-15" name="Set visible" sid="974282355221652" type="Sword">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -161,7 +163,6 @@
                         <action id="-16" name="Wait" sid="616008592516565" type="System">
                             <param id="0" name="Seconds">EspadaVEL</param>
                         </action>
-                        <action id="-9" name="Destroy" sid="676006985964503" type="Espada" />
                     </actions>
                 </event-block>
                 <event-block sid="692785554623446">
@@ -470,6 +471,12 @@
                                 </action>
                                 <action id="0" name="Set text" sid="525811716508997" type="Text">
                                     <param id="0" name="Text">&quot;You survived until the horde: &quot; &amp; Horda</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="765976712335366" type="Espada">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="572882914185449" type="Sword">
+                                    <param id="0" name="Visibility">1</param>
                                 </action>
                             </actions>
                         </event-block>

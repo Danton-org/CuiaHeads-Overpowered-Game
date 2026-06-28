@@ -23,7 +23,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
         <folder expanded="1" path="object-folder/TopDown/" />
-        <folder expanded="0" path="object-folder/TopDown/Colisores/" />
+        <folder expanded="1" path="object-folder/TopDown/Colisores/" />
         <folder expanded="1" path="object-folder/TopDown/Sprites/" />
         <folder expanded="0" path="object-folder/TopDown/Sprites/Fase1/" />
         <folder expanded="0" path="object-folder/TopDown/Sprites/TelaInicial/" />

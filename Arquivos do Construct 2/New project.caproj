@@ -10,14 +10,19 @@
     <unique-id>22jpz9j55nk2f</unique-id>
     <saved-with-version>28000</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="JP Deblonde" id="SVGImage" version="1">SVG Image</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Sir_G" id="TiledSprite" version="2">Tiled Sprite</plugin>
         <plugin author="R0J0hound" id="c2canvas" version="2">Canvas</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
-        <behavior author="lunarray" id="lunarray_LiteTween" version="1.700000048">LiteTween</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -48,174 +53,203 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder>
-        <object-folder name="SpriteCartas">
-            <object-type name="Carta01" sid="692868252982557">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="787808989318437" speed="0">
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaVida.png" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="Carta02" sid="693008094852429">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="897423839019234" speed="0">
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="Carta03" sid="518975884797755">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="198748616571952" speed="0">
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="Carta04" sid="110556825621303">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="789866543081622" speed="0">
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="Carta05" sid="433960558938960">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="670238889556338" speed="0">
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="Carta06" sid="952131374913335">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="748869078598690" speed="0">
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="Carta07" sid="659562675867381">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="778905920162846" speed="0">
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5">
-                            <collision-poly>
-                                <point x="1" y="1" />
-                                <point x="0" y="1" />
-                                <point x="0" y="0" />
-                                <point x="1" y="0" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="Carta08" sid="351916009340725">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="898781544920480" speed="0">
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="Carta09" sid="324476051413173">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="497236607157864" speed="0">
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="Carta10" sid="311776595603649">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="364295833664558" speed="0">
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-        </object-folder>
         <object-folder name="TopDown">
-            <object-type name="Espada" sid="650403909669775">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="296128752798293" speed="5">
-                        <frame duration="1" hotspotX="0" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="GatinhoSprite" sid="332183002523043">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="452145413204198" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="GatinhoCollision" sid="476644238901141">
-                <plugin id="Sprite" />
-                <behaviors>
-                    <behavior-type name="8Direction" sid="445650328902673">
-                        <behavior id="EightDir" />
-                    </behavior-type>
-                    <behavior-type name="Solid" sid="977265487495099">
-                        <behavior id="solid" />
-                    </behavior-type>
-                    <behavior-type name="ScrollTo" sid="113617908385227">
-                        <behavior id="scrollto" />
-                    </behavior-type>
-                </behaviors>
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="947157954056118" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="InimigoCollision" sid="969799317822759">
-                <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable name="InimigoVida" sid="196949316416757" type="number" />
-                    <instance-variable name="InimigoDano" sid="570796806592147" type="number" />
-                </instance-variables>
-                <behaviors>
-                    <behavior-type name="Solid" sid="996193742617792">
-                        <behavior id="solid" />
-                    </behavior-type>
-                </behaviors>
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="222790730208179" speed="5">
-                        <frame duration="1" hotspotX="0.496" hotspotY="0.456" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="Parede" sid="993209897352841">
-                <plugin id="Sprite" />
-                <behaviors>
-                    <behavior-type name="Solid" sid="796707358895229">
-                        <behavior id="solid" />
-                    </behavior-type>
-                </behaviors>
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="538959114742227" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\muroExemplo.png" />
-                    </animation>
-                </animation-folder>
-            </object-type>
+            <object-folder name="Colisores">
+                <object-type name="Espada" sid="650403909669775">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="296128752798293" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="GatinhoCollision" sid="476644238901141">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="8Direction" sid="445650328902673">
+                            <behavior id="EightDir" />
+                        </behavior-type>
+                        <behavior-type name="Solid" sid="977265487495099">
+                            <behavior id="solid" />
+                        </behavior-type>
+                        <behavior-type name="ScrollTo" sid="113617908385227">
+                            <behavior id="scrollto" />
+                        </behavior-type>
+                        <behavior-type name="Flash" sid="753812333859399">
+                            <behavior id="Flash" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="947157954056118" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="GatinhoSprite" sid="332183002523043">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="452145413204198" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="InimigoCollision" sid="969799317822759">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="InimigoVida" sid="196949316416757" type="number" />
+                        <instance-variable name="InimigoDano" sid="570796806592147" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Solid" sid="996193742617792">
+                            <behavior id="solid" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="222790730208179" speed="5">
+                            <frame duration="1" hotspotX="0.496" hotspotY="0.456" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="XPOrb" sid="434184379528494">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="109656590069611" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="Sprites">
+                <object-folder name="Fase1">
+                    <object-type name="Parede" sid="993209897352841">
+                        <plugin id="Sprite" />
+                        <behaviors>
+                            <behavior-type name="Solid" sid="796707358895229">
+                                <behavior id="solid" />
+                            </behavior-type>
+                        </behaviors>
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="538959114742227" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\muroExemplo.png" />
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="Chao" sid="706251449621173">
+                        <plugin id="Sprite" />
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="454030551461784" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\teste\Chão.png" />
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="TiledSprite" sid="223147698835348">
+                        <plugin id="TiledSprite" />
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="713810953315159" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\teste\Chão.png" />
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                </object-folder>
+                <object-folder name="TelaInicial">
+                    <object-type name="BackgroundPrincipal" sid="687119628717041">
+                        <plugin id="Sprite" />
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="297735062138661" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\teste\Tela inicial.png" />
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="JogoTituloPrincipal" sid="397986793733534">
+                        <plugin id="Sprite" />
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="661787554579875" speed="5">
+                                <frame duration="1" hotspotX="0.855796" hotspotY="2.14226" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\teste\Titulo.png">
+                                    <collision-poly>
+                                        <point x="0.0263902" y="0.217573" />
+                                        <point x="0.855796" y="0.171548" />
+                                        <point x="0.965127" y="0.870293" />
+                                        <point x="0.741753" y="0.891213" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="BackgroundOptions" sid="209037466765317">
+                        <plugin id="Sprite" />
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="701527288286426" speed="5">
+                                <frame duration="1" hotspotX="0.48072" hotspotY="0.466321" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\teste\Botão 1.png" />
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="CreditsTitulo" sid="263119218801571">
+                        <plugin id="Sprite" />
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="695335511706104" speed="5">
+                                <frame duration="1" hotspotX="0.570136" hotspotY="0.486486" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\teste\Botão de Credits.png" />
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="OptionsTitulo" sid="302583267122211">
+                        <plugin id="Sprite" />
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="824055106269938" speed="5">
+                                <frame duration="1" hotspotX="0.50463" hotspotY="0.559524" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\e.png" />
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="PlayTitulo" sid="654360993377759">
+                        <plugin id="Sprite" />
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="346627894426163" speed="5">
+                                <frame duration="1" hotspotX="0.526786" hotspotY="0.483333" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\teste\Botão de play.png" />
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                </object-folder>
+                <object-folder name="Aisha">
+                    <object-type name="Sword" sid="989770900729882">
+                        <plugin id="Sprite" />
+                        <behaviors>
+                            <behavior-type name="Pin" sid="806778065531404">
+                                <behavior id="Pin" />
+                            </behavior-type>
+                        </behaviors>
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="172313208896643" speed="5">
+                                <frame duration="1" hotspotX="0.544634" hotspotY="0.983688" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Catoom\CuiaHeads-Overpowered-Game\Artes\espadoca.png">
+                                    <collision-poly>
+                                        <point x="0.310933" y="0.397924" />
+                                        <point x="0.504514" y="0.0380623" />
+                                        <point x="0.745236" y="0.374691" />
+                                        <point x="0.759278" y="0.493327" />
+                                        <point x="0.958877" y="0.717252" />
+                                        <point x="0.504514" y="0.986159" />
+                                        <point x="0.0521565" y="0.716263" />
+                                        <point x="0.304915" y="0.493327" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                </object-folder>
+            </object-folder>
+            <object-folder name="Botoes">
+                <object-type name="TryAgain" sid="268493124240705">
+                    <plugin id="Button" />
+                </object-type>
+                <object-type name="Return" sid="292306495370517">
+                    <plugin id="Button" />
+                </object-type>
+            </object-folder>
+            <object-folder name="Textos">
+                <object-type name="Text" sid="759207235183755">
+                    <plugin id="Text" />
+                </object-type>
+            </object-folder>
         </object-folder>
         <object-folder name="HUD">
-            <object-folder name="JogoMemoria" />
             <object-folder name="TopDown">
                 <object-type name="Vida" sid="507468877798716">
                     <plugin id="c2canvas" />
@@ -235,90 +269,17 @@
                 </object-type>
             </object-folder>
         </object-folder>
-        <object-folder name="SpriteCartasV2">
-            <object-type name="CartaV2" sid="512932397798232">
-                <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable name="ID" sid="977613052588559" type="number" />
-                    <instance-variable name="Frame" sid="944679036713400" type="number" />
-                    <instance-variable name="EstáVirada" sid="798781841262660" type="boolean" />
-                </instance-variables>
-                <animation-folder>
-                    <animation framecount="6" loop="0" name="Frente" pingpong="0" repeatcount="1" repeatto="0" sid="153404044999161" speed="0">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\CartaFund.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de Alcance.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de Ataque speed.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de Força.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de vida.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta_de_Armadura.png" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-        </object-folder>
         <object-type name="Mouse" sid="647187985110911">
             <plugin id="Mouse" />
-        </object-type>
-        <object-type name="Area" sid="390166634574758">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="734544187178420" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="BuffsArea" sid="592053075930042">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="262840930779029" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="StartButton" sid="569014758192685">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="805523690155145" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="SpawnCartas" sid="406041295283111">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="385509870315799" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
         </object-type>
         <object-type name="Keyboard" sid="851950665401997">
             <plugin id="Keyboard" />
         </object-type>
+        <object-type name="SVGImage" sid="820759492291505">
+            <plugin id="SVGImage" />
+        </object-type>
     </object-folder>
-    <families>
-        <family name="Cartas" plugin-id="Sprite" sid="960025214567832">
-            <members>
-                <member>Carta01</member>
-                <member>Carta02</member>
-                <member>Carta03</member>
-                <member>Carta04</member>
-                <member>Carta05</member>
-                <member>Carta06</member>
-                <member>Carta07</member>
-                <member>Carta08</member>
-                <member>Carta09</member>
-                <member>Carta10</member>
-            </members>
-            <instance-variables>
-                <instance-variable comment="0 (costas); 1 (virada); 2 (acertou)" name="EstaVirado" sid="306146759002350" type="number" />
-                <instance-variable comment="ID de cada PAR DE CARTAS" name="ID" sid="262001297182014" type="number" />
-            </instance-variables>
-            <behaviors>
-                <behavior-type name="LiteTween" sid="935360198747828">
-                    <behavior id="lunarray_LiteTween" />
-                </behavior-type>
-            </behaviors>
-        </family>
-    </families>
+    <families />
     <layout-folder>
         <layout>MemoryGame.xml</layout>
         <layout>TopDown.xml</layout>

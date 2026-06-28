@@ -11,7 +11,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout active="1" order="0">TopDown</layout>
-        <event-sheet order="1">MemoryEventSheet</event-sheet>
+        <event-sheet order="1">TPEventSheet</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -19,42 +19,39 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="0" name="Window Size" />
         <property expanded="1" name="Configuration Settings" />
     </properties>
-    <families-expanded root="0">
-        <family expanded="0" name="Cartas" />
-    </families-expanded>
+    <families-expanded root="0" />
     <folders-expanded>
-        <folder expanded="0" path="object-folder/" />
-        <folder expanded="0" path="object-folder/SpriteCartas/" />
-        <folder expanded="0" path="object-folder/TopDown/" />
-        <folder expanded="0" path="object-folder/HUD/" />
-        <folder expanded="1" path="object-folder/HUD/JogoMemoria/" />
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="object-folder/TopDown/" />
+        <folder expanded="0" path="object-folder/TopDown/Colisores/" />
+        <folder expanded="1" path="object-folder/TopDown/Sprites/" />
+        <folder expanded="0" path="object-folder/TopDown/Sprites/Fase1/" />
+        <folder expanded="0" path="object-folder/TopDown/Sprites/TelaInicial/" />
+        <folder expanded="1" path="object-folder/TopDown/Sprites/Aisha/" />
+        <folder expanded="0" path="object-folder/TopDown/Botoes/" />
+        <folder expanded="0" path="object-folder/TopDown/Textos/" />
+        <folder expanded="1" path="object-folder/HUD/" />
         <folder expanded="0" path="object-folder/HUD/TopDown/" />
-        <folder expanded="1" path="object-folder/SpriteCartasV2/" />
-        <folder expanded="0" path="layout-folder/" />
-        <folder expanded="0" path="event-folder/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="file-folder/" />
         <folder expanded="1" path="sound-folder/" />
         <folder expanded="1" path="music-folder/" />
         <folder expanded="0" path="file-folder/Icons/" />
-        <folder expanded="1" path="animation-folder/Carta01/" />
-        <folder expanded="1" path="animation-folder/Carta02/" />
-        <folder expanded="1" path="animation-folder/Carta03/" />
-        <folder expanded="1" path="animation-folder/Carta04/" />
-        <folder expanded="1" path="animation-folder/Carta05/" />
-        <folder expanded="1" path="animation-folder/Carta06/" />
-        <folder expanded="1" path="animation-folder/Carta07/" />
-        <folder expanded="1" path="animation-folder/Carta08/" />
-        <folder expanded="1" path="animation-folder/Carta09/" />
-        <folder expanded="1" path="animation-folder/Carta10/" />
         <folder expanded="1" path="animation-folder/Espada/" />
-        <folder expanded="1" path="animation-folder/GatinhoSprite/" />
         <folder expanded="1" path="animation-folder/GatinhoCollision/" />
+        <folder expanded="1" path="animation-folder/GatinhoSprite/" />
         <folder expanded="1" path="animation-folder/InimigoCollision/" />
+        <folder expanded="1" path="animation-folder/XPOrb/" />
         <folder expanded="1" path="animation-folder/Parede/" />
-        <folder expanded="1" path="animation-folder/CartaV2/" />
-        <folder expanded="1" path="animation-folder/Area/" />
-        <folder expanded="1" path="animation-folder/BuffsArea/" />
-        <folder expanded="1" path="animation-folder/StartButton/" />
-        <folder expanded="1" path="animation-folder/SpawnCartas/" />
+        <folder expanded="1" path="animation-folder/Chao/" />
+        <folder expanded="1" path="animation-folder/TiledSprite/" />
+        <folder expanded="1" path="animation-folder/BackgroundPrincipal/" />
+        <folder expanded="1" path="animation-folder/JogoTituloPrincipal/" />
+        <folder expanded="1" path="animation-folder/BackgroundOptions/" />
+        <folder expanded="1" path="animation-folder/CreditsTitulo/" />
+        <folder expanded="1" path="animation-folder/OptionsTitulo/" />
+        <folder expanded="1" path="animation-folder/PlayTitulo/" />
+        <folder expanded="1" path="animation-folder/Sword/" />
     </folders-expanded>
 </c2uistate>

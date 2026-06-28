@@ -17,6 +17,7 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="lunarray" id="lunarray_LiteTween" version="1.700000048">LiteTween</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
@@ -243,14 +244,43 @@
                     <instance-variable name="Frame" sid="944679036713400" type="number" />
                     <instance-variable name="EstáVirada" sid="798781841262660" type="boolean" />
                 </instance-variables>
+                <behaviors>
+                    <behavior-type name="LiteTween" sid="283757828011409">
+                        <behavior id="lunarray_LiteTween" />
+                    </behavior-type>
+                    <behavior-type name="Sine" sid="736023052868065">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                    <behavior-type name="Sine2" sid="653147281028012">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="6" loop="0" name="Frente" pingpong="0" repeatcount="1" repeatto="0" sid="153404044999161" speed="0">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\CartaFund.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de Alcance.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de Ataque speed.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de Força.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de vida.png" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta_de_Armadura.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de Alcance.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de Força.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de Ataque speed.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de vida.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Jogo da Memória">
+            <object-type name="Sprite" sid="805332148072284">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="637329494001696">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                    <behavior-type name="Sine2" sid="566754841788366">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="942666170637347" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -326,6 +356,7 @@
     <event-folder>
         <event-sheet>MemoryEventSheet.xml</event-sheet>
         <event-sheet>TPEventSheet.xml</event-sheet>
+        <event-sheet>MemoryEventSheetV2.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Mouse" uid="1" />

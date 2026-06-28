@@ -2,7 +2,7 @@
 <c2layout>
     <name>MemoryGame</name>
     <sid>137084857549355</sid>
-    <event-sheet>MemoryEventSheet</event-sheet>
+    <event-sheet>MemoryEventSheetV2</event-sheet>
     <size>
         <width>854</width>
         <height>480</height>
@@ -13,7 +13,7 @@
     </margins>
     <unbounded-scrolling>0</unbounded-scrolling>
     <layers>
-        <layer name="Layer 0" sid="211071952598050">
+        <layer name="Cartas" sid="211071952598050">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>0</transparent>
@@ -29,87 +29,49 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="Area" uid="0">
+                <instance type="Sprite" uid="0">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>427.727661133</x>
-                        <y>160.000167847</y>
-                        <z>0</z>
-                        <width>635</width>
-                        <height>290</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="BuffsArea" uid="3">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>430</x>
-                        <y>390</y>
-                        <z>0</z>
-                        <width>720</width>
-                        <height>150</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="StartButton" uid="4">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>710</x>
-                        <y>390</y>
-                        <z>0</z>
-                        <width>120</width>
-                        <height>80</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>0.600000024</opacity>
-                    </world>
-                </instance>
-                <instance type="SpawnCartas" uid="2">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Sine">
+                            <properties>
+                                <active-on-start>Yes</active-on-start>
+                                <movement>Width</movement>
+                                <wave>Sine</wave>
+                                <period>10</period>
+                                <period-random>3</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>0</period-offset-random>
+                                <magnitude>50</magnitude>
+                                <magnitude-random>0</magnitude-random>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Sine2">
+                            <properties>
+                                <active-on-start>Yes</active-on-start>
+                                <movement>Height</movement>
+                                <wave>Sine</wave>
+                                <period>10</period>
+                                <period-random>3</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>0</period-offset-random>
+                                <magnitude>50</magnitude>
+                                <magnitude-random>0</magnitude-random>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>427</x>
-                        <y>235</y>
+                        <y>240</y>
                         <z>0</z>
-                        <width>90</width>
-                        <height>120</height>
+                        <width>550</width>
+                        <height>450</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -117,205 +79,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="SpawnCartas" uid="5">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>547</x>
-                        <y>235</y>
-                        <z>0</z>
-                        <width>90</width>
-                        <height>120</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="SpawnCartas" uid="6">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>667</x>
-                        <y>235</y>
-                        <z>0</z>
-                        <width>90</width>
-                        <height>120</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="SpawnCartas" uid="7">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>307</x>
-                        <y>235</y>
-                        <z>0</z>
-                        <width>90</width>
-                        <height>120</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="SpawnCartas" uid="8">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>187</x>
-                        <y>235</y>
-                        <z>0</z>
-                        <width>90</width>
-                        <height>120</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="SpawnCartas" uid="9">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>427</x>
-                        <y>95</y>
-                        <z>0</z>
-                        <width>90</width>
-                        <height>120</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="SpawnCartas" uid="10">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>547</x>
-                        <y>95</y>
-                        <z>0</z>
-                        <width>90</width>
-                        <height>120</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="SpawnCartas" uid="11">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>667</x>
-                        <y>95</y>
-                        <z>0</z>
-                        <width>90</width>
-                        <height>120</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="SpawnCartas" uid="12">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>307</x>
-                        <y>95</y>
-                        <z>0</z>
-                        <width>90</width>
-                        <height>120</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="SpawnCartas" uid="13">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>187</x>
-                        <y>95</y>
-                        <z>0</z>
-                        <width>90</width>
-                        <height>120</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="Carta01" uid="14">
+                <instance type="CartaV2" uid="267">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -323,14 +87,15 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <EstaVirado>0</EstaVirado>
                         <ID>1</ID>
+                        <Frame>1</Frame>
+                        <EstáVirada>false</EstáVirada>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="LiteTween">
                             <properties>
-                                <active-on-start>Yes</active-on-start>
-                                <tweened-property>Position</tweened-property>
+                                <active-on-start>No</active-on-start>
+                                <tweened-property>Width</tweened-property>
                                 <function>EaseOutBounce</function>
                                 <target>100,100</target>
                                 <target-mode>Absolute</target-mode>
@@ -338,15 +103,41 @@
                                 <enforce-mode>Enforce</enforce-mode>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Sine">
+                            <properties>
+                                <active-on-start>Yes</active-on-start>
+                                <movement>Horizontal</movement>
+                                <wave>Sine</wave>
+                                <period>8</period>
+                                <period-random>4</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>2</period-offset-random>
+                                <magnitude>7</magnitude>
+                                <magnitude-random>3</magnitude-random>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Sine2">
+                            <properties>
+                                <active-on-start>Yes</active-on-start>
+                                <movement>Vertical</movement>
+                                <wave>Sine</wave>
+                                <period>8</period>
+                                <period-random>4</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>2</period-offset-random>
+                                <magnitude>5</magnitude>
+                                <magnitude-random>1.5</magnitude-random>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-1241</x>
-                        <y>1519</y>
+                        <x>307.5</x>
+                        <y>169.5</y>
                         <z>0</z>
-                        <width>180</width>
-                        <height>250</height>
+                        <width>90</width>
+                        <height>120</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -354,7 +145,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Carta02" uid="15">
+                <instance type="CartaV2" uid="268">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -362,14 +153,15 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <EstaVirado>0</EstaVirado>
                         <ID>1</ID>
+                        <Frame>1</Frame>
+                        <EstáVirada>false</EstáVirada>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="LiteTween">
                             <properties>
-                                <active-on-start>Yes</active-on-start>
-                                <tweened-property>Position</tweened-property>
+                                <active-on-start>No</active-on-start>
+                                <tweened-property>Width</tweened-property>
                                 <function>EaseOutBounce</function>
                                 <target>100,100</target>
                                 <target-mode>Absolute</target-mode>
@@ -377,15 +169,41 @@
                                 <enforce-mode>Enforce</enforce-mode>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Sine">
+                            <properties>
+                                <active-on-start>Yes</active-on-start>
+                                <movement>Horizontal</movement>
+                                <wave>Sine</wave>
+                                <period>8</period>
+                                <period-random>4</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>2</period-offset-random>
+                                <magnitude>7</magnitude>
+                                <magnitude-random>3</magnitude-random>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Sine2">
+                            <properties>
+                                <active-on-start>Yes</active-on-start>
+                                <movement>Vertical</movement>
+                                <wave>Sine</wave>
+                                <period>8</period>
+                                <period-random>4</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>2</period-offset-random>
+                                <magnitude>5</magnitude>
+                                <magnitude-random>1.5</magnitude-random>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-1241</x>
-                        <y>1519</y>
+                        <x>427.5</x>
+                        <y>169.5</y>
                         <z>0</z>
-                        <width>180</width>
-                        <height>250</height>
+                        <width>90</width>
+                        <height>120</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -393,7 +211,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Carta03" uid="16">
+                <instance type="CartaV2" uid="269">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -401,14 +219,15 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <EstaVirado>0</EstaVirado>
-                        <ID>2</ID>
+                        <ID>1</ID>
+                        <Frame>1</Frame>
+                        <EstáVirada>false</EstáVirada>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="LiteTween">
                             <properties>
-                                <active-on-start>Yes</active-on-start>
-                                <tweened-property>Position</tweened-property>
+                                <active-on-start>No</active-on-start>
+                                <tweened-property>Width</tweened-property>
                                 <function>EaseOutBounce</function>
                                 <target>100,100</target>
                                 <target-mode>Absolute</target-mode>
@@ -416,15 +235,41 @@
                                 <enforce-mode>Enforce</enforce-mode>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Sine">
+                            <properties>
+                                <active-on-start>Yes</active-on-start>
+                                <movement>Horizontal</movement>
+                                <wave>Sine</wave>
+                                <period>8</period>
+                                <period-random>4</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>2</period-offset-random>
+                                <magnitude>7</magnitude>
+                                <magnitude-random>3</magnitude-random>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Sine2">
+                            <properties>
+                                <active-on-start>Yes</active-on-start>
+                                <movement>Vertical</movement>
+                                <wave>Sine</wave>
+                                <period>8</period>
+                                <period-random>4</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>2</period-offset-random>
+                                <magnitude>5</magnitude>
+                                <magnitude-random>1.5</magnitude-random>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-1241</x>
-                        <y>1519</y>
+                        <x>547.5</x>
+                        <y>169.5</y>
                         <z>0</z>
-                        <width>180</width>
-                        <height>250</height>
+                        <width>90</width>
+                        <height>120</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -432,7 +277,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Carta04" uid="17">
+                <instance type="CartaV2" uid="272">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -440,14 +285,15 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <EstaVirado>0</EstaVirado>
-                        <ID>2</ID>
+                        <ID>1</ID>
+                        <Frame>1</Frame>
+                        <EstáVirada>false</EstáVirada>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="LiteTween">
                             <properties>
-                                <active-on-start>Yes</active-on-start>
-                                <tweened-property>Position</tweened-property>
+                                <active-on-start>No</active-on-start>
+                                <tweened-property>Width</tweened-property>
                                 <function>EaseOutBounce</function>
                                 <target>100,100</target>
                                 <target-mode>Absolute</target-mode>
@@ -455,15 +301,41 @@
                                 <enforce-mode>Enforce</enforce-mode>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Sine">
+                            <properties>
+                                <active-on-start>Yes</active-on-start>
+                                <movement>Horizontal</movement>
+                                <wave>Sine</wave>
+                                <period>8</period>
+                                <period-random>4</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>2</period-offset-random>
+                                <magnitude>7</magnitude>
+                                <magnitude-random>3</magnitude-random>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Sine2">
+                            <properties>
+                                <active-on-start>Yes</active-on-start>
+                                <movement>Vertical</movement>
+                                <wave>Sine</wave>
+                                <period>8</period>
+                                <period-random>4</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>2</period-offset-random>
+                                <magnitude>5</magnitude>
+                                <magnitude-random>1.5</magnitude-random>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-1241</x>
-                        <y>1519</y>
+                        <x>306.5</x>
+                        <y>310.5</y>
                         <z>0</z>
-                        <width>180</width>
-                        <height>250</height>
+                        <width>90</width>
+                        <height>120</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -471,7 +343,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Carta05" uid="18">
+                <instance type="CartaV2" uid="273">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -479,14 +351,15 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <EstaVirado>0</EstaVirado>
-                        <ID>3</ID>
+                        <ID>1</ID>
+                        <Frame>1</Frame>
+                        <EstáVirada>false</EstáVirada>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="LiteTween">
                             <properties>
-                                <active-on-start>Yes</active-on-start>
-                                <tweened-property>Position</tweened-property>
+                                <active-on-start>No</active-on-start>
+                                <tweened-property>Width</tweened-property>
                                 <function>EaseOutBounce</function>
                                 <target>100,100</target>
                                 <target-mode>Absolute</target-mode>
@@ -494,15 +367,41 @@
                                 <enforce-mode>Enforce</enforce-mode>
                             </properties>
                         </behavior-instance>
+                        <behavior-instance type="Sine">
+                            <properties>
+                                <active-on-start>Yes</active-on-start>
+                                <movement>Horizontal</movement>
+                                <wave>Sine</wave>
+                                <period>8</period>
+                                <period-random>4</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>2</period-offset-random>
+                                <magnitude>7</magnitude>
+                                <magnitude-random>3</magnitude-random>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Sine2">
+                            <properties>
+                                <active-on-start>Yes</active-on-start>
+                                <movement>Vertical</movement>
+                                <wave>Sine</wave>
+                                <period>8</period>
+                                <period-random>4</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>2</period-offset-random>
+                                <magnitude>5</magnitude>
+                                <magnitude-random>1.5</magnitude-random>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-1241</x>
-                        <y>1519</y>
+                        <x>426.5</x>
+                        <y>310.5</y>
                         <z>0</z>
-                        <width>180</width>
-                        <height>250</height>
+                        <width>90</width>
+                        <height>120</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -510,7 +409,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Carta06" uid="19">
+                <instance type="CartaV2" uid="274">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -518,14 +417,15 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <EstaVirado>0</EstaVirado>
-                        <ID>3</ID>
+                        <ID>1</ID>
+                        <Frame>1</Frame>
+                        <EstáVirada>false</EstáVirada>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="LiteTween">
                             <properties>
-                                <active-on-start>Yes</active-on-start>
-                                <tweened-property>Position</tweened-property>
+                                <active-on-start>No</active-on-start>
+                                <tweened-property>Width</tweened-property>
                                 <function>EaseOutBounce</function>
                                 <target>100,100</target>
                                 <target-mode>Absolute</target-mode>
@@ -533,171 +433,41 @@
                                 <enforce-mode>Enforce</enforce-mode>
                             </properties>
                         </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>-1241</x>
-                        <y>1519</y>
-                        <z>0</z>
-                        <width>180</width>
-                        <height>250</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="Carta07" uid="20">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <EstaVirado>0</EstaVirado>
-                        <ID>4</ID>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="LiteTween">
+                        <behavior-instance type="Sine">
                             <properties>
                                 <active-on-start>Yes</active-on-start>
-                                <tweened-property>Position</tweened-property>
-                                <function>EaseOutBounce</function>
-                                <target>100,100</target>
-                                <target-mode>Absolute</target-mode>
-                                <duration>2.5</duration>
-                                <enforce-mode>Enforce</enforce-mode>
+                                <movement>Horizontal</movement>
+                                <wave>Sine</wave>
+                                <period>8</period>
+                                <period-random>4</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>2</period-offset-random>
+                                <magnitude>7</magnitude>
+                                <magnitude-random>3</magnitude-random>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Sine2">
+                            <properties>
+                                <active-on-start>Yes</active-on-start>
+                                <movement>Vertical</movement>
+                                <wave>Sine</wave>
+                                <period>8</period>
+                                <period-random>4</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>2</period-offset-random>
+                                <magnitude>5</magnitude>
+                                <magnitude-random>1.5</magnitude-random>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-1241</x>
-                        <y>1519</y>
+                        <x>546.5</x>
+                        <y>310.5</y>
                         <z>0</z>
-                        <width>180</width>
-                        <height>250</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="Carta08" uid="21">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <EstaVirado>0</EstaVirado>
-                        <ID>4</ID>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="LiteTween">
-                            <properties>
-                                <active-on-start>Yes</active-on-start>
-                                <tweened-property>Position</tweened-property>
-                                <function>EaseOutBounce</function>
-                                <target>100,100</target>
-                                <target-mode>Absolute</target-mode>
-                                <duration>2.5</duration>
-                                <enforce-mode>Enforce</enforce-mode>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>-1241</x>
-                        <y>1519</y>
-                        <z>0</z>
-                        <width>180</width>
-                        <height>250</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="Carta09" uid="22">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <EstaVirado>0</EstaVirado>
-                        <ID>5</ID>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="LiteTween">
-                            <properties>
-                                <active-on-start>Yes</active-on-start>
-                                <tweened-property>Position</tweened-property>
-                                <function>EaseOutBounce</function>
-                                <target>100,100</target>
-                                <target-mode>Absolute</target-mode>
-                                <duration>2.5</duration>
-                                <enforce-mode>Enforce</enforce-mode>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>-1241</x>
-                        <y>1519</y>
-                        <z>0</z>
-                        <width>180</width>
-                        <height>250</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="Carta10" uid="23">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <EstaVirado>0</EstaVirado>
-                        <ID>5</ID>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="LiteTween">
-                            <properties>
-                                <active-on-start>Yes</active-on-start>
-                                <tweened-property>Position</tweened-property>
-                                <function>EaseOutBounce</function>
-                                <target>100,100</target>
-                                <target-mode>Absolute</target-mode>
-                                <duration>2.5</duration>
-                                <enforce-mode>Enforce</enforce-mode>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>-1241</x>
-                        <y>1519</y>
-                        <z>0</z>
-                        <width>180</width>
-                        <height>250</height>
+                        <width>90</width>
+                        <height>120</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>

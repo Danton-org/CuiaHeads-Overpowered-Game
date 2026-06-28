@@ -2,5 +2,551 @@
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>MemoryEventSheetV2</name>
-    <events />
+    <events>
+        <comment>Buffs:</comment>
+        <variable comment="Variável para buffar o salto" constant="0" name="BuffDefesa" sid="890002020359127" static="0" type="number">0</variable>
+        <variable comment="A PRINCIPAL KKKKK Variável para buffar o tamanho da espada" constant="0" name="BuffTamEspada" sid="101299474245998" static="0" type="number">0</variable>
+        <variable comment="Variável para buffar o dano" constant="0" name="BuffDano" sid="779180305245926" static="0" type="number">0</variable>
+        <variable comment="Variável para buffar a velocidade de ataque" constant="0" name="BuffVelocAtaque" sid="500021612585154" static="0" type="number">0</variable>
+        <variable comment="Variável para buffar a vida" constant="0" name="BuffVida" sid="698914784761347" static="0" type="number">0</variable>
+        <comment>Sistema de Cartas:</comment>
+        <variable comment="Impede que o jogador clique numa  3ª carta enquanto duas estiverem sendo validadas" constant="0" name="BloquearClique" sid="453683621745222" static="0" type="number">0</variable>
+        <variable comment="Pra limitar do jogador não virar mais de 2" constant="0" name="CartasViradas" sid="566414347580287" static="0" type="number">0</variable>
+        <variable constant="0" name="SegundaCartaUID" sid="990679263680696" static="0" type="number">0</variable>
+        <variable constant="0" name="PrimeiraCartaUID" sid="662715320841550" static="0" type="number">0</variable>
+        <variable constant="0" name="ValidarEscolha" sid="494393345728103" static="0" type="number">0</variable>
+        <variable constant="0" name="ID_Temp2" sid="315612512234350" static="0" type="number">0</variable>
+        <variable constant="0" name="ID_Temp1" sid="226114051653439" static="0" type="number">0</variable>
+        <variable constant="0" name="AtivarLayerDasCartas" sid="854418012482187" static="0" type="number">0</variable>
+        <event-group description="" sid="377188703427559" title="Sistema de Cartas:">
+            <sub-events>
+                <event-block sid="713454969426939">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="322081758890940" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">CartaV2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="891066862716968" type="CartaV2">
+                            <param id="0" name="Animation">&quot;Frente&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                        <action behavior="LiteTween" id="4" name="Set tweened property" sid="424713037269125" type="CartaV2">
+                            <param id="0" name="Tweened property">2</param>
+                        </action>
+                        <action behavior="LiteTween" id="1" name="Set duration" sid="482857854557479" type="CartaV2">
+                            <param id="0" name="Duration">0.25</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="773074593206987">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="598338039717414" type="System">
+                                    <param id="0" name="Variable">CartasViradas</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="749845024046171" type="System">
+                                    <param id="0" name="Variable">BloquearClique</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="396128412569042" type="CartaV2">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="LiteTween" id="5" name="Set easing" sid="316783104698374" type="CartaV2">
+                                    <param id="0" name="Function">25</param>
+                                </action>
+                                <action behavior="LiteTween" id="3" name="Set target" sid="326408844718871" type="CartaV2">
+                                    <param id="0" name="Target is">4</param>
+                                    <param id="1" name="Relativity">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </action>
+                                <action behavior="LiteTween" id="10" name="Start" sid="933157527715090" type="CartaV2">
+                                    <param id="0" name="Start Mode">0</param>
+                                    <param id="1" name="Force use current">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="897804077168264" type="System">
+                                    <param id="0" name="Seconds">0.35</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="671587618966492" type="CartaV2">
+                                    <param id="0" name="Frame number">CartaV2.ID</param>
+                                </action>
+                                <action behavior="LiteTween" id="5" name="Set easing" sid="789920306021636" type="CartaV2">
+                                    <param id="0" name="Function">26</param>
+                                </action>
+                                <action behavior="LiteTween" id="3" name="Set target" sid="795761986015417" type="CartaV2">
+                                    <param id="0" name="Target is">4</param>
+                                    <param id="1" name="Relativity">0</param>
+                                    <param id="2" name="Value">90</param>
+                                </action>
+                                <action behavior="LiteTween" id="10" name="Start" sid="242504138268746" type="CartaV2">
+                                    <param id="0" name="Start Mode">0</param>
+                                    <param id="1" name="Force use current">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="490774011323434" type="CartaV2">
+                                    <param id="0" name="Instance variable">EstáVirada</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="759672080898623" type="System">
+                                    <param id="0" name="Variable">CartasViradas</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="635230267924344">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="839688612570897" type="System">
+                                            <param id="0" name="Variable">CartasViradas</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">01</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="871534386347401" type="System">
+                                            <param id="0" name="Variable">PrimeiraCartaUID</param>
+                                            <param id="1" name="Value">CartaV2.UID</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="667230636684721" type="System">
+                                            <param id="0" name="Variable">ID_Temp1</param>
+                                            <param id="1" name="Value">CartaV2.ID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="981111753017144">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="740104219494429" type="System">
+                                            <param id="0" name="Variable">CartasViradas</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">02</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="108303539704648" type="System">
+                                            <param id="0" name="Variable">SegundaCartaUID</param>
+                                            <param id="1" name="Value">CartaV2.UID</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="628787934879634" type="System">
+                                            <param id="0" name="Variable">ID_Temp2</param>
+                                            <param id="1" name="Value">CartaV2.ID</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="366413589854458" type="System">
+                                            <param id="0" name="Variable">BloquearClique</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="273537122988178">
+                            <conditions>
+                                <condition id="-5" name="Compare width" sid="118920647696723" type="CartaV2">
+                                    <param id="0" name="Comparison">3</param>
+                                    <param id="1" name="Width">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="297016782987610">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="588639410422035" type="System">
+                            <param id="0" name="Variable">BloquearClique</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="136824961913062" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="471081368149320" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="655486715413891" type="System">
+                            <param id="0" name="Variable">ValidarEscolha</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="262085032596738">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="865279820035574" type="System">
+                            <param id="0" name="Variable">ValidarEscolha</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="932101291197820" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="258871906639912">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="612982074947149" type="System">
+                                    <param id="0" name="First value">ID_Temp1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">ID_Temp2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="556027365110147">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="354906425164288" type="System">
+                                            <param id="0" name="First value">ID_Temp1</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="503105054921088" type="System">
+                                            <param id="0" name="Variable">BuffDefesa</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="193519466333999">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="646388700704823" type="System">
+                                            <param id="0" name="First value">ID_Temp1</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="517026674513214" type="System">
+                                            <param id="0" name="Variable">BuffTamEspada</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="648133336357068">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="279777171996158" type="System">
+                                            <param id="0" name="First value">ID_Temp1</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="824825881349700" type="System">
+                                            <param id="0" name="Variable">BuffDano</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="603969671355224">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="827058098332276" type="System">
+                                            <param id="0" name="First value">ID_Temp1</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="360337537262123" type="System">
+                                            <param id="0" name="Variable">BuffVelocAtaque</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="939072009381789">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="718014487117629" type="System">
+                                            <param id="0" name="First value">ID_Temp1</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="947257358787524" type="System">
+                                            <param id="0" name="Variable">BuffVida</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="688197998998944">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-4" name="Set layer visible" sid="147000019750905" type="System">
+                                            <param id="0" name="Layer">&quot;Cartas&quot;</param>
+                                            <param id="1" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="375603868798231" type="System">
+                                            <param id="0" name="Variable">CartasViradas</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="454699757201870" type="System">
+                                            <param id="0" name="Variable">BloquearClique</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="495100280198493" type="System">
+                                            <param id="0" name="Variable">ValidarEscolha</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="210951661616094">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="842769282132488" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="639359475931347">
+                                    <conditions />
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="291313997231545">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="354471908881846" type="System">
+                                                    <param id="0" name="First value">ID_Temp2</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="796913918212014" type="System">
+                                                    <param id="0" name="Variable">BuffDefesa</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="675158940001229">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="913659062700164" type="System">
+                                                    <param id="0" name="First value">ID_Temp2</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="769526337201651" type="System">
+                                                    <param id="0" name="Variable">BuffTamEspada</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="808682509423622">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="462161595624686" type="System">
+                                                    <param id="0" name="First value">ID_Temp2</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="303944142257974" type="System">
+                                                    <param id="0" name="Variable">BuffDano</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="985466690834836">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="564020964666868" type="System">
+                                                    <param id="0" name="First value">ID_Temp2</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">4</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="781123913033077" type="System">
+                                                    <param id="0" name="Variable">BuffVelocAtaque</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="882848165045757">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="795040059124495" type="System">
+                                                    <param id="0" name="First value">ID_Temp2</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">5</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="590730794115382" type="System">
+                                                    <param id="0" name="Variable">BuffVida</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="772721971646774">
+                                    <conditions />
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="394897850489189">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="474706891353833" type="System">
+                                                    <param id="0" name="First value">ID_Temp1</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="753768490591429" type="System">
+                                                    <param id="0" name="Variable">BuffDefesa</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="387161835286556">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="142837500105812" type="System">
+                                                    <param id="0" name="First value">ID_Temp1</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="832931363071726" type="System">
+                                                    <param id="0" name="Variable">BuffTamEspada</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="914441607145066">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="763332522363697" type="System">
+                                                    <param id="0" name="First value">ID_Temp1</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="734781302498798" type="System">
+                                                    <param id="0" name="Variable">BuffDano</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="748651443168408">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="924042508240343" type="System">
+                                                    <param id="0" name="First value">ID_Temp1</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">4</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="386858457052750" type="System">
+                                                    <param id="0" name="Variable">BuffVelocAtaque</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="453563423082019">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="533461239102614" type="System">
+                                                    <param id="0" name="First value">ID_Temp1</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">5</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="492451878798721" type="System">
+                                                    <param id="0" name="Variable">BuffVida</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="304237796816729">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-4" name="Set layer visible" sid="472153037076971" type="System">
+                                            <param id="0" name="Layer">&quot;Cartas&quot;</param>
+                                            <param id="1" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="337880265167559" type="System">
+                                            <param id="0" name="Variable">CartasViradas</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="325500746300702" type="System">
+                                            <param id="0" name="Variable">BloquearClique</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="455818845019473" type="System">
+                                            <param id="0" name="Variable">ValidarEscolha</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="985493726194135" title="Ativação da Camada:">
+            <sub-events>
+                <event-block sid="600074026568109">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="354389698846729" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="838860056626741" type="System">
+                            <param id="0" name="Variable">AtivarLayerDasCartas</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="358765353348032">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="372457386771287" type="System">
+                            <param id="0" name="Variable">AtivarLayerDasCartas</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="907396976002561" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="150003641242194" type="System">
+                            <param id="0" name="Layer">&quot;Cartas&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="583218035158590" type="System">
+                            <param id="0" name="Variable">AtivarLayerDasCartas</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="333310838668611">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="249746876908331" type="System">
+                                    <param id="0" name="Object">CartaV2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="681829252645854" type="CartaV2">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="779382810674425" type="CartaV2">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Value">choose(1,2,3,4,5)</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="704599501085065" type="CartaV2">
+                                    <param id="0" name="Instance variable">Frame</param>
+                                    <param id="1" name="Value">CartaV2.ID</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="455730260832824" type="CartaV2">
+                                    <param id="0" name="Instance variable">EstáVirada</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
 </c2eventsheet>

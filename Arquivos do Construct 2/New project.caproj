@@ -54,8 +54,8 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="787808989318437" speed="0">
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaVida.png" />
+                        <frame duration="0" hotspotX="-1.#IND" hotspotY="-1.#IND" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
+                        <frame duration="0" hotspotX="-1.#IND" hotspotY="-1.#IND" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaVida.png" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -63,8 +63,8 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="897423839019234" speed="0">
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0" hotspotX="-1.#IND" hotspotY="-1.#IND" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
+                        <frame duration="0" hotspotX="-1.#IND" hotspotY="-1.#IND" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -72,8 +72,8 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="198748616571952" speed="0">
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0" hotspotX="-1.#IND" hotspotY="-1.#IND" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
+                        <frame duration="0" hotspotX="-1.#IND" hotspotY="-1.#IND" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -81,8 +81,8 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="789866543081622" speed="0">
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0" hotspotX="-1.#IND" hotspotY="-1.#IND" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
+                        <frame duration="0" hotspotX="-1.#IND" hotspotY="-1.#IND" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -90,8 +90,8 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="670238889556338" speed="0">
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0" hotspotX="-1.#IND" hotspotY="-1.#IND" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
+                        <frame duration="0" hotspotX="-1.#IND" hotspotY="-1.#IND" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -99,8 +99,8 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="748869078598690" speed="0">
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0" hotspotX="-1.#IND" hotspotY="-1.#IND" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
+                        <frame duration="0" hotspotX="-1.#IND" hotspotY="-1.#IND" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -108,8 +108,8 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="778905920162846" speed="0">
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5">
+                        <frame duration="0" hotspotX="-1.#IND" hotspotY="-1.#IND" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
+                        <frame duration="0" hotspotX="-1.#IND" hotspotY="-1.#IND">
                             <collision-poly>
                                 <point x="1" y="1" />
                                 <point x="0" y="1" />
@@ -124,8 +124,8 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="898781544920480" speed="0">
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0" hotspotX="-1.#IND" hotspotY="-1.#IND" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
+                        <frame duration="0" hotspotX="-1.#IND" hotspotY="-1.#IND" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -133,8 +133,8 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="497236607157864" speed="0">
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0" hotspotX="-1.#IND" hotspotY="-1.#IND" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
+                        <frame duration="0" hotspotX="-1.#IND" hotspotY="-1.#IND" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -142,8 +142,8 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="364295833664558" speed="0">
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="0" hotspotX="-1.#IND" hotspotY="-1.#IND" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Artes\CartaFund.png" />
+                        <frame duration="0" hotspotX="-1.#IND" hotspotY="-1.#IND" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -292,7 +292,7 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="734544187178420" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="-1.#IND" hotspotY="-1.#IND" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -300,7 +300,7 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="262840930779029" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="-1.#IND" hotspotY="-1.#IND" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -308,7 +308,7 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="805523690155145" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="-1.#IND" hotspotY="-1.#IND" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -316,7 +316,7 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="385509870315799" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="-1.#IND" hotspotY="-1.#IND" />
                 </animation>
             </animation-folder>
         </object-type>

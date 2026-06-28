@@ -3,11 +3,18 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>TPEventSheet</name>
     <events>
-        <variable comment="Segundos para spawnar algum bicho (quanto menor = mais bicho)" constant="0" name="TempoDeSpawn" sid="289716551127425" static="0" type="number">0.3</variable>
+        <comment>===========&#x0D;&#x0A;Variáveis para o Sistema de XP e Hordas&#x0D;&#x0A;===========</comment>
+        <variable constant="0" name="Horda" sid="393379827816464" static="0" type="number">1</variable>
+        <variable comment="Segundos para spawnar algum bicho (quanto menor = mais bicho)" constant="0" name="TempoSpawn" sid="289716551127425" static="0" type="number">1</variable>
+        <variable constant="0" name="XP" sid="688252286558378" static="0" type="number">0.1</variable>
+        <variable constant="0" name="XPMax" sid="734539505667128" static="0" type="number">10</variable>
+        <comment>===========&#x0D;&#x0A;Variáveis da Aisha&#x0D;&#x0A;===========</comment>
         <variable comment="Variável para o dano da espada do gatinho" constant="0" name="EspadaDMG" sid="923426593908049" static="0" type="number">5</variable>
         <variable comment="Variável para a velocidade da espada do gatinho (quanto menor = mais rápido)" constant="0" name="EspadaVEL" sid="674732805334792" static="0" type="number">0.3</variable>
         <variable comment="Variável para o TAMANHO DA ESPADA do gatinho" constant="0" name="TamEspada" sid="479047419099836" static="0" type="number">5</variable>
-        <variable comment="Variável para a vida do gatinho" constant="0" name="Vida" sid="439744639138286" static="0" type="number">500</variable>
+        <variable comment="Variável para a vida do gatinho" constant="0" name="Vida" sid="439744639138286" static="0" type="number">20</variable>
+        <variable comment="Variável para a vida do gatinho" constant="0" name="VidaMax" sid="384865314479407" static="0" type="number">20</variable>
+        <comment>===========&#x0D;&#x0A;Grupos de Ações&#x0D;&#x0A;===========</comment>
         <event-group description="" sid="402439171710115" title="Controles">
             <sub-events>
                 <event-block sid="978356872738768">
@@ -64,6 +71,11 @@
                             <param id="0" name="Mouse button">0</param>
                             <param id="1" name="Click type">0</param>
                         </condition>
+                        <condition id="-8" name="Compare two values" sid="357884415272974" type="System">
+                            <param id="0" name="First value">timescale</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-3" name="Create object" sid="612446167961932" type="System">
@@ -72,7 +84,21 @@
                             <param id="2" name="X">GatinhoCollision.X</param>
                             <param id="3" name="Y">GatinhoCollision.Y</param>
                         </action>
+                        <action id="-3" name="Create object" sid="935191708208778" type="System">
+                            <param id="0" name="Object to create">Sword</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">GatinhoCollision.X</param>
+                            <param id="3" name="Y">GatinhoCollision.Y</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="552405022924868" type="Sword">
+                            <param id="0" name="Pin to">Espada</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
                         <action id="-22" name="Set angle toward position" sid="182549238893454" type="Espada">
+                            <param id="0" name="X">Mouse.X</param>
+                            <param id="1" name="Y">Mouse.Y</param>
+                        </action>
+                        <action id="-22" name="Set angle toward position" sid="675416777964978" type="Sword">
                             <param id="0" name="X">Mouse.X</param>
                             <param id="1" name="Y">Mouse.Y</param>
                         </action>
@@ -80,15 +106,39 @@
                             <param id="0" name="Seconds">EspadaVEL</param>
                         </action>
                         <action id="-9" name="Destroy" sid="247532859834469" type="Espada" />
+                        <action id="-9" name="Destroy" sid="178421055156168" type="Sword" />
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="362403024548947" title="SistemaInimigo">
+        <event-group description="" sid="454340590073449" title="Aisha">
+            <sub-events>
+                <event-block sid="917159629197247">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="698069586487308" type="GatinhoCollision">
+                            <param id="0" name="Object">XPOrb</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="145285639869565" type="System">
+                            <param id="0" name="Variable">XP</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="734315092131748" type="XPOrb" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="362403024548947" title="Inimigo">
             <sub-events>
                 <event-block sid="627206080517388">
                     <conditions>
                         <condition id="-1" name="Every tick" sid="638351099691874" type="System" />
+                        <condition id="-8" name="Compare two values" sid="736412221540895" type="System">
+                            <param id="0" name="First value">timescale</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-23" name="Move at angle" sid="648063338152993" type="InimigoCollision">
@@ -124,6 +174,11 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="468351130981301" type="InimigoCollision" />
+                        <action id="0" name="Spawn another object" sid="959309872563825" type="InimigoCollision">
+                            <param id="0" name="Object">XPOrb</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="304278794219465">
@@ -137,50 +192,383 @@
                             <param id="0" name="Variable">Vida</param>
                             <param id="1" name="Value">InimigoCollision.InimigoDano</param>
                         </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="333733143347031" type="GatinhoCollision">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.4</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="318817541762017" title="Condições do Sistema">
+        <event-group description="" sid="318817541762017" title="Sistema">
             <sub-events>
-                <event-block sid="266462414045678">
-                    <conditions>
-                        <condition id="-2" name="On start of layout" sid="629432155179071" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-3" name="Set position" sid="602041887194345" type="GatinhoCollision">
-                            <param id="0" name="X">1344</param>
-                            <param id="1" name="Y">1216</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="699888663025148">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="664429673596260" type="System">
-                            <param id="0" name="Variable">Vida</param>
-                            <param id="1" name="Comparison">3</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="490347946934616" type="GatinhoCollision" />
-                    </actions>
-                </event-block>
-                <event-block sid="896282469204256">
-                    <conditions>
-                        <condition id="-6" name="Every X seconds" sid="217765584173967" type="System">
-                            <param id="0" name="Interval (seconds)">TempoDeSpawn</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-3" name="Create object" sid="711300215142905" type="System">
-                            <param id="0" name="Object to create">InimigoCollision</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="X">GatinhoCollision.X + cos(random(360)) * random(800, 1000)</param>
-                            <param id="3" name="Y">GatinhoCollision.Y + sin(random(360)) * random(800, 1000)</param>
-                        </action>
-                    </actions>
-                </event-block>
+                <event-group description="" sid="119782121193751" title="Tela Inicial - Botões">
+                    <sub-events>
+                        <event-group description="" sid="629009773725891" title="Play">
+                            <sub-events>
+                                <event-block sid="348912254637702">
+                                    <conditions>
+                                        <condition id="6" name="On object clicked" sid="969300945448040" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                            <param id="1" name="Click type">0</param>
+                                            <param id="2" name="Object clicked">PlayTitulo</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-4" name="Set layer visible" sid="397586384193182" type="System">
+                                            <param id="0" name="Layer">4</param>
+                                            <param id="1" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-4" name="Set layer visible" sid="757093497622816" type="System">
+                                            <param id="0" name="Layer">1</param>
+                                            <param id="1" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-4" name="Set layer visible" sid="417990345252965" type="System">
+                                            <param id="0" name="Layer">0</param>
+                                            <param id="1" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-13" name="Set time scale" sid="404175005707744" type="System">
+                                            <param id="0" name="Time scale">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="421804852751731">
+                                    <conditions>
+                                        <condition id="7" name="Cursor is over object" sid="400511414571935" type="Mouse">
+                                            <param id="0" name="Object">PlayTitulo</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="9" name="Set scale" sid="754214080210175" type="PlayTitulo">
+                                            <param id="0" name="Scale">0.7</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="232716959590115">
+                                    <conditions>
+                                        <condition id="7" inverted="1" name="Cursor is over object" sid="479877501814910" type="Mouse">
+                                            <param id="0" name="Object">PlayTitulo</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="9" name="Set scale" sid="520620897620909" type="PlayTitulo">
+                                            <param id="0" name="Scale">0.5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" sid="701663186636786" title="Options">
+                            <sub-events>
+                                <event-block sid="686418875183537">
+                                    <conditions>
+                                        <condition id="6" name="On object clicked" sid="415814369108958" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                            <param id="1" name="Click type">0</param>
+                                            <param id="2" name="Object clicked">OptionsTitulo</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                                <event-block sid="245699767649344">
+                                    <conditions>
+                                        <condition id="7" name="Cursor is over object" sid="623621002119347" type="Mouse">
+                                            <param id="0" name="Object">OptionsTitulo</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="9" name="Set scale" sid="101745123334708" type="OptionsTitulo">
+                                            <param id="0" name="Scale">0.7</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="330235957207281">
+                                    <conditions>
+                                        <condition id="7" inverted="1" name="Cursor is over object" sid="349133580256252" type="Mouse">
+                                            <param id="0" name="Object">OptionsTitulo</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="9" name="Set scale" sid="181608512512143" type="OptionsTitulo">
+                                            <param id="0" name="Scale">0.5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" sid="578206994691333" title="Credits">
+                            <sub-events>
+                                <event-block sid="305725535422847">
+                                    <conditions>
+                                        <condition id="6" name="On object clicked" sid="599585855761105" type="Mouse">
+                                            <param id="0" name="Mouse button">0</param>
+                                            <param id="1" name="Click type">0</param>
+                                            <param id="2" name="Object clicked">CreditsTitulo</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                                <event-block sid="762997109419315">
+                                    <conditions>
+                                        <condition id="7" name="Cursor is over object" sid="867418613644045" type="Mouse">
+                                            <param id="0" name="Object">CreditsTitulo</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="9" name="Set scale" sid="348378477888084" type="CreditsTitulo">
+                                            <param id="0" name="Scale">0.7</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="646438129834700">
+                                    <conditions>
+                                        <condition id="7" inverted="1" name="Cursor is over object" sid="866592386636111" type="Mouse">
+                                            <param id="0" name="Object">CreditsTitulo</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="9" name="Set scale" sid="820493236644116" type="CreditsTitulo">
+                                            <param id="0" name="Scale">0.5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="474713947455735" title="Sistema de vida - Aisha">
+                    <sub-events>
+                        <event-block sid="232987100341332">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="792390104157928" type="System">
+                                    <param id="0" name="First value">Vida</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">VidaMax</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="965117904353908" type="System">
+                                    <param id="0" name="Variable">Vida</param>
+                                    <param id="1" name="Value">VidaMax</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="188651703871885">
+                            <conditions>
+                                <condition id="-5" name="Compare width" sid="841072426995522" type="Vida">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Width">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="121809584671125" type="Vida">
+                                    <param id="0" name="Width">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-group description="" sid="778022633114643" title="Tela de Game Over">
+                            <sub-events>
+                                <event-block sid="699888663025148">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="664429673596260" type="System">
+                                            <param id="0" name="Variable">Vida</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set time scale" sid="490347946934616" type="System">
+                                            <param id="0" name="Time scale">0</param>
+                                        </action>
+                                        <action id="-4" name="Set layer visible" sid="102117590990614" type="System">
+                                            <param id="0" name="Layer">3</param>
+                                            <param id="1" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="115061954728171">
+                                    <conditions>
+                                        <condition id="0" name="On clicked" sid="973961617621003" type="TryAgain" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="793542925282758" type="System">
+                                            <param id="0" name="Variable">Horda</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="285477557291307" type="System">
+                                            <param id="0" name="Variable">TempoSpawn</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="123409119143932" type="System">
+                                            <param id="0" name="Variable">XP</param>
+                                            <param id="1" name="Value">0.1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="948942575858257" type="System">
+                                            <param id="0" name="Variable">XPMax</param>
+                                            <param id="1" name="Value">10</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="528058247789191" type="System">
+                                            <param id="0" name="Variable">EspadaDMG</param>
+                                            <param id="1" name="Value">5</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="494885806287059" type="System">
+                                            <param id="0" name="Variable">EspadaVEL</param>
+                                            <param id="1" name="Value">0.3</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="877991760829122" type="System">
+                                            <param id="0" name="Variable">TamEspada</param>
+                                            <param id="1" name="Value">5</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="641600735928424" type="System">
+                                            <param id="0" name="Variable">Vida</param>
+                                            <param id="1" name="Value">20</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="143905657895009" type="System">
+                                            <param id="0" name="Variable">VidaMax</param>
+                                            <param id="1" name="Value">20</param>
+                                        </action>
+                                        <action id="-13" name="Set time scale" sid="613502586271244" type="System">
+                                            <param id="0" name="Time scale">1.0</param>
+                                        </action>
+                                        <action id="-26" name="Restart layout" sid="347429617844592" type="System" />
+                                        <action id="-4" name="Set layer visible" sid="149396582753523" type="System">
+                                            <param id="0" name="Layer">3</param>
+                                            <param id="1" name="Visibility">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="490871347316059" title="Início de Layout">
+                    <sub-events>
+                        <event-block sid="266462414045678">
+                            <conditions>
+                                <condition id="-2" name="On start of layout" sid="629432155179071" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set time scale" sid="766066308677665" type="System">
+                                    <param id="0" name="Time scale">0</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="828445983346855" type="System">
+                                    <param id="0" name="Layer">4</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="266239528767745" type="System">
+                                    <param id="0" name="Layer">1</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="834206224743736" type="System">
+                                    <param id="0" name="Layer">0</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="602041887194345" type="GatinhoCollision">
+                                    <param id="0" name="X">random(1200, 4800)</param>
+                                    <param id="1" name="Y">random(1000, 3600)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="525811716508997" type="Text">
+                                    <param id="0" name="Text">&quot;You survived until the horde: &quot; &amp; Horda</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="107738227429402" title="Movimentação do Inimigo">
+                    <sub-events>
+                        <event-block sid="896282469204256">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="217765584173967" type="System">
+                                    <param id="0" name="Interval (seconds)">TempoSpawn</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="522357930501809" type="System">
+                                    <param id="0" name="First value">timescale</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="711300215142905" type="System">
+                                    <param id="0" name="Object to create">InimigoCollision</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">GatinhoCollision.X + cos(random(360)) * random(800, 1000)</param>
+                                    <param id="3" name="Y">GatinhoCollision.Y + sin(random(360)) * random(800, 1000)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="922965257903184" title="Controle das barras de Vida e XP">
+                    <sub-events>
+                        <event-block sid="384669596132171">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="183997204066280" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Set width" sid="566100648353702" type="Vida">
+                                    <param id="0" name="Width">(Vida / VidaMax) * 400</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="642837600720630" type="BarraXP">
+                                    <param id="0" name="Width">(XP / XPMax) * 340</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="669376698136037">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="982545489666677" type="System">
+                                    <param id="0" name="First value">XP</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">XPMax</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Subtract from" sid="929051206214434" type="System">
+                                    <param id="0" name="Variable">XP</param>
+                                    <param id="1" name="Value">XPMax</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="795924535256871" type="System">
+                                    <param id="0" name="Variable">Horda</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="821372660735728" type="System">
+                                    <param id="0" name="Variable">XPMax</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="-11" name="Subtract from" sid="669396077391259" type="System">
+                                    <param id="0" name="Variable">TempoSpawn</param>
+                                    <param id="1" name="Value">0.1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="284543934532830">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="668061901407309" type="System">
+                                            <param id="0" name="First value">Horda %  5</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set time scale" sid="625580789913187" type="System">
+                                            <param id="0" name="Time scale">0</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="120863133240850" type="Espada" />
+                                        <action id="-3" name="Create object" sid="886337713113234" type="System">
+                                            <param id="0" name="Object to create">Espada</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">38</param>
+                                            <param id="3" name="Y">-17</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="264959063893398" type="GatinhoCollision">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
             </sub-events>
         </event-group>
     </events>

@@ -10,7 +10,7 @@
         <variable constant="0" name="XPMax" sid="734539505667128" static="0" type="number">10</variable>
         <comment>===========&#x0D;&#x0A;Variáveis da Aisha&#x0D;&#x0A;===========</comment>
         <variable comment="Variável para o dano da espada do gatinho" constant="0" name="EspadaDMG" sid="923426593908049" static="0" type="number">5</variable>
-        <variable comment="Variável para a velocidade da espada do gatinho (quanto menor = mais rápido)" constant="0" name="EspadaVEL" sid="674732805334792" static="0" type="number">0.3</variable>
+        <variable comment="Variável para a velocidade da espada do gatinho (quanto menor = mais rápido)" constant="0" name="EspadaVEL" sid="674732805334792" static="0" type="number">0.03</variable>
         <variable comment="Variável para o TAMANHO DA ESPADA do gatinho" constant="0" name="TamEspada" sid="479047419099836" static="0" type="number">5</variable>
         <variable comment="Variável para a vida do gatinho" constant="0" name="Vida" sid="439744639138286" static="0" type="number">20</variable>
         <variable comment="Variável para a vida do gatinho" constant="0" name="VidaMax" sid="384865314479407" static="0" type="number">20</variable>
@@ -86,13 +86,11 @@
                             <param id="0" name="X">GatinhoCollision.X</param>
                             <param id="1" name="Y">GatinhoCollision.Y</param>
                         </action>
-                        <action id="-22" name="Set angle toward position" sid="375806706433345" type="Espada">
-                            <param id="0" name="X">Mouse.X</param>
-                            <param id="1" name="Y">Mouse.Y</param>
+                        <action id="-8" name="Set angle" sid="915597614850638" type="Espada">
+                            <param id="0" name="Angle">anglelerp(Espada.Angle, angle(Espada.X, Espada.Y, Mouse.X, Mouse.Y), EspadaVEL)</param>
                         </action>
-                        <action id="-22" name="Set angle toward position" sid="648151147601956" type="Sword">
-                            <param id="0" name="X">Mouse.X</param>
-                            <param id="1" name="Y">Mouse.Y</param>
+                        <action id="-8" name="Set angle" sid="717630982401450" type="Sword">
+                            <param id="0" name="Angle">anglelerp(Espada.Angle, angle(Espada.X, Espada.Y, Mouse.X, Mouse.Y), EspadaVEL)</param>
                         </action>
                     </actions>
                 </event-block>

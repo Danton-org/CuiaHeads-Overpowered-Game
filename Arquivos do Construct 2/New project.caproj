@@ -346,8 +346,11 @@
         <object-type name="SVGImage" sid="820759492291505">
             <plugin id="SVGImage" />
         </object-type>
-        <object-type name="Text2" sid="503690600036989">
+        <object-type name="BuffText" sid="503690600036989">
             <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="ID" sid="105652748836317" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Pin" sid="756103758169799">
                     <behavior id="Pin" />

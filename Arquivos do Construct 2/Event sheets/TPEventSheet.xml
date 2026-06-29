@@ -5,14 +5,14 @@
     <events>
         <comment>===========&#x0D;&#x0A;Variáveis para o Sistema de XP e Hordas&#x0D;&#x0A;===========</comment>
         <variable constant="0" name="SorteioSpawn" sid="611282055887532" static="0" type="number">0</variable>
-        <variable constant="0" name="Horda" sid="393379827816464" static="0" type="number">1</variable>
+        <variable constant="0" name="Horda" sid="393379827816464" static="0" type="number">4</variable>
         <variable comment="Segundos para spawnar algum bicho (quanto menor = mais bicho)" constant="0" name="TempoSpawn" sid="289716551127425" static="0" type="number">1</variable>
         <variable constant="0" name="XP" sid="688252286558378" static="0" type="number">0.1</variable>
         <variable constant="0" name="XPMax" sid="734539505667128" static="0" type="number">10</variable>
         <comment>===========&#x0D;&#x0A;Variáveis da Aisha&#x0D;&#x0A;===========</comment>
         <variable comment="Variável para o dano da espada do gatinho" constant="0" name="EspadaDMG" sid="923426593908049" static="0" type="number">5</variable>
         <variable comment="Variável para a velocidade da espada do gatinho (quanto menor = mais rápido)" constant="0" name="EspadaVEL" sid="674732805334792" static="0" type="number">0.3</variable>
-        <variable comment="Variável para o TAMANHO DA ESPADA do gatinho" constant="0" name="TamEspada" sid="479047419099836" static="0" type="number">5</variable>
+        <variable comment="Variável para o TAMANHO DA ESPADA do gatinho" constant="0" name="TamEspada" sid="479047419099836" static="0" type="number">1</variable>
         <variable comment="Variável para a vida do gatinho" constant="0" name="Vida" sid="439744639138286" static="0" type="number">20</variable>
         <variable comment="Variável para a vida do gatinho" constant="0" name="VidaMax" sid="384865314479407" static="0" type="number">20</variable>
         <comment>===========&#x0D;&#x0A;Grupos de Ações&#x0D;&#x0A;===========</comment>
@@ -39,6 +39,11 @@
                         <condition id="2" name="Key is down" sid="231515660759249" type="Keyboard">
                             <param id="0" name="Key">65</param>
                         </condition>
+                        <condition id="-14" name="Compare variable" sid="495029612676076" type="System">
+                            <param id="0" name="Variable">AtivarLayerDasCartas</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action behavior="8Direction" id="7" name="Simulate control" sid="698050946196359" type="GatinhoCollision">
@@ -50,6 +55,11 @@
                     <conditions>
                         <condition id="2" name="Key is down" sid="321472341264547" type="Keyboard">
                             <param id="0" name="Key">87</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="497331862851543" type="System">
+                            <param id="0" name="Variable">AtivarLayerDasCartas</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -63,6 +73,11 @@
                         <condition id="2" name="Key is down" sid="564617965259987" type="Keyboard">
                             <param id="0" name="Key">83</param>
                         </condition>
+                        <condition id="-14" name="Compare variable" sid="452122994909208" type="System">
+                            <param id="0" name="Variable">AtivarLayerDasCartas</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action behavior="8Direction" id="7" name="Simulate control" sid="783279797448552" type="GatinhoCollision">
@@ -74,6 +89,11 @@
                     <conditions>
                         <condition id="2" name="Key is down" sid="707857290926361" type="Keyboard">
                             <param id="0" name="Key">68</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="280624564508939" type="System">
+                            <param id="0" name="Variable">AtivarLayerDasCartas</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -109,11 +129,12 @@
                             <param id="1" name="Y">GatinhoCollision.Y</param>
                         </action>
                         <action id="-8" name="Set angle" sid="960479095735975" type="Espada">
-                            <param id="0" name="Angle">anglelerp(Espada.Angle, angle(Espada.X, Espada.Y, Mouse.X, Mouse.Y), 0.08 + BuffVelocAtaque)</param>
+                            <param id="0" name="Angle">anglelerp(Espada.Angle, angle(Espada.X, Espada.Y, Mouse.X, Mouse.Y), 0.08 + (BuffVelocAtaque * 0.02))</param>
                         </action>
                         <action id="-8" name="Set angle" sid="604320816861712" type="Sword">
                             <param id="0" name="Angle">Espada.Angle</param>
                         </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="260454772798670" type="Sword" />
                     </actions>
                 </event-block>
                 <event-block sid="638790991903452">
@@ -128,6 +149,7 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action behavior="Fade" id="0" name="Restart fade" sid="904363723798923" type="Sword" />
                         <action id="11" name="Set collisions enabled" sid="128076187181848" type="Espada">
                             <param id="0" name="Collisions">0</param>
                         </action>
@@ -154,6 +176,21 @@
                         <action id="-9" name="Destroy" sid="734315092131748" type="XPOrb" />
                     </actions>
                 </event-block>
+                <event-block sid="523565409228560">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="459711699628027" type="XPOrb">
+                            <param id="0" name="Object">ImaColeta</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="349832320355839" type="XPOrb">
+                            <param id="0" name="X">XPOrb.X + (cos(angle(XPOrb.X, XPOrb.Y, GatinhoCollision.X, GatinhoCollision.Y)) * 5)</param>
+                        </action>
+                        <action id="-2" name="Set Y" sid="420190543906815" type="XPOrb">
+                            <param id="0" name="Y">XPOrb.Y + (sin(angle(XPOrb.X, XPOrb.Y, GatinhoCollision.X, GatinhoCollision.Y)) * 5)</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="117674354507895" title="Sistema - Inimigos">
@@ -167,10 +204,10 @@
                     <actions>
                         <action id="-12" name="Subtract from" sid="690152074826541" type="InimigoCollision">
                             <param id="0" name="Instance variable">InimigoVida</param>
-                            <param id="1" name="Value">EspadaDMG</param>
+                            <param id="1" name="Value">EspadaDMG + BuffDano</param>
                         </action>
                         <action id="-16" name="Wait" sid="616008592516565" type="System">
-                            <param id="0" name="Seconds">EspadaVEL</param>
+                            <param id="0" name="Seconds">max(0.05, EspadaVEL - BuffVelocAtaque)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -196,6 +233,7 @@
                         <condition id="0" name="On collision with another object" sid="178411179169282" type="InimigoCollision">
                             <param id="0" name="Object">GatinhoCollision</param>
                         </condition>
+                        <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="464634199065824" type="GatinhoCollision" />
                     </conditions>
                     <actions>
                         <action id="-11" name="Subtract from" sid="618806463871474" type="System">
@@ -205,7 +243,7 @@
                         <action behavior="Flash" id="0" name="Flash" sid="333733143347031" type="GatinhoCollision">
                             <param id="0" name="&apos;On&apos; time">0.1</param>
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
-                            <param id="2" name="Duration">0.4</param>
+                            <param id="2" name="Duration">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -214,10 +252,10 @@
                         <condition id="-6" name="Every X seconds" sid="217765584173967" type="System">
                             <param id="0" name="Interval (seconds)">TempoSpawn</param>
                         </condition>
-                        <condition id="-8" name="Compare two values" sid="522357930501809" type="System">
-                            <param id="0" name="First value">timescale</param>
+                        <condition id="-14" name="Compare variable" sid="810725657867169" type="System">
+                            <param id="0" name="Variable">AtivarLayerDasCartas</param>
                             <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Second value">1</param>
+                            <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -249,7 +287,7 @@
                             <actions>
                                 <action id="-10" name="Set value" sid="673162733681517" type="InimigoCollision">
                                     <param id="0" name="Instance variable">InimigoVida</param>
-                                    <param id="1" name="Value">10</param>
+                                    <param id="1" name="Value">5</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="780569853073773" type="InimigoCollision">
                                     <param id="0" name="Instance variable">InimigoVelocidade</param>
@@ -257,7 +295,7 @@
                                 </action>
                                 <action id="-10" name="Set value" sid="347804914287565" type="InimigoCollision">
                                     <param id="0" name="Instance variable">InimigoDano</param>
-                                    <param id="1" name="Value">5</param>
+                                    <param id="1" name="Value">3</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -289,7 +327,7 @@
                                     <actions>
                                         <action id="-10" name="Set value" sid="697848146340965" type="InimigoCollision">
                                             <param id="0" name="Instance variable">InimigoVida</param>
-                                            <param id="1" name="Value">10</param>
+                                            <param id="1" name="Value">5</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="491062907382019" type="InimigoCollision">
                                             <param id="0" name="Instance variable">InimigoVelocidade</param>
@@ -297,7 +335,7 @@
                                         </action>
                                         <action id="-10" name="Set value" sid="929458177650164" type="InimigoCollision">
                                             <param id="0" name="Instance variable">InimigoDano</param>
-                                            <param id="1" name="Value">5</param>
+                                            <param id="1" name="Value">3</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -313,15 +351,15 @@
                                     <actions>
                                         <action id="-10" name="Set value" sid="503972404871686" type="InimigoCollision">
                                             <param id="0" name="Instance variable">InimigoVida</param>
-                                            <param id="1" name="Value">15</param>
+                                            <param id="1" name="Value">10</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="588369836786080" type="InimigoCollision">
                                             <param id="0" name="Instance variable">InimigoVelocidade</param>
-                                            <param id="1" name="Value">4</param>
+                                            <param id="1" name="Value">3</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="972802865624986" type="InimigoCollision">
                                             <param id="0" name="Instance variable">InimigoDano</param>
-                                            <param id="1" name="Value">7</param>
+                                            <param id="1" name="Value">5</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -335,6 +373,11 @@
                         <condition id="-14" name="Compare variable" sid="588075682289576" type="System">
                             <param id="0" name="Variable">Vida</param>
                             <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="881052961723757" type="System">
+                            <param id="0" name="Variable">AtivarLayerDasCartas</param>
+                            <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
@@ -570,6 +613,26 @@
                                             <param id="0" name="Variable">TamEspada</param>
                                             <param id="1" name="Value">5</param>
                                         </action>
+                                        <action id="-9" name="Set value" sid="127990215073978" type="System">
+                                            <param id="0" name="Variable">BuffDano</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="163647296667864" type="System">
+                                            <param id="0" name="Variable">BuffDefesa</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="831658597823927" type="System">
+                                            <param id="0" name="Variable">BuffTamEspada</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="561749371748403" type="System">
+                                            <param id="0" name="Variable">BuffVelocAtaque</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="941955251392390" type="System">
+                                            <param id="0" name="Variable">BuffVida</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
                                         <action id="-9" name="Set value" sid="641600735928424" type="System">
                                             <param id="0" name="Variable">Vida</param>
                                             <param id="1" name="Value">20</param>
@@ -631,7 +694,7 @@
                         </event-block>
                     </sub-events>
                 </event-group>
-                <event-group description="" sid="922965257903184" title="Controle das barras de Vida e XP">
+                <event-group description="" sid="922965257903184" title="Controle das barras de Vida, XP e TamEspada">
                     <sub-events>
                         <event-block sid="384669596132171">
                             <conditions>
@@ -643,6 +706,24 @@
                                 </action>
                                 <action id="-5" name="Set width" sid="642837600720630" type="BarraXP">
                                     <param id="0" name="Width">(XP / XPMax) * 340</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="924300362295666" type="Espada">
+                                    <param id="0" name="Width">130 * clamp(TamEspada + (BuffTamEspada * 0.4), 1, 2.5)</param>
+                                    <param id="1" name="Height">16 * clamp(TamEspada + (BuffTamEspada * 0.4), 1, 2.5)</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="690386310744965" type="Sword">
+                                    <param id="0" name="Width">140 * clamp(TamEspada + (BuffTamEspada * 0.4), 1, 2.5)</param>
+                                    <param id="1" name="Height">40 * clamp(TamEspada + (BuffTamEspada * 0.4), 1, 2.5)</param>
+                                </action>
+                                <action id="-20" name="Set layout scale" sid="307825660662154" type="System">
+                                    <param id="0" name="Scale">lerp(LayoutScale, 1 / (TamEspada + (BuffTamEspada * 0.4)), 0.05)</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="118981927124141" type="ImaColeta">
+                                    <param id="0" name="X">GatinhoCollision.X</param>
+                                    <param id="1" name="Y">GatinhoCollision.Y</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="250927644585844" type="ImaColeta">
+                                    <param id="0" name="Scale">1 + (BuffTamEspada * 0.4)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -680,11 +761,9 @@
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Second value">0</param>
                                         </condition>
+                                        <condition id="-4" name="Trigger once while true" sid="389363822576237" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-13" name="Set time scale" sid="625580789913187" type="System">
-                                            <param id="0" name="Time scale">0</param>
-                                        </action>
                                         <action id="-9" name="Destroy" sid="120863133240850" type="Espada" />
                                         <action id="-3" name="Create object" sid="886337713113234" type="System">
                                             <param id="0" name="Object to create">Espada</param>
@@ -694,6 +773,10 @@
                                         </action>
                                         <action id="-15" name="Set visible" sid="264959063893398" type="GatinhoCollision">
                                             <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="106511830288253" type="System">
+                                            <param id="0" name="Variable">AtivarLayerDasCartas</param>
+                                            <param id="1" name="Value">1</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -977,6 +1060,14 @@
                                             <param id="0" name="Name">&quot;AtualizarBuffs&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
+                                        <action id="-9" name="Set value" sid="480219045172603" type="System">
+                                            <param id="0" name="Variable">AtivarLayerDasCartas</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-4" name="Set layer visible" sid="404466150970966" type="System">
+                                            <param id="0" name="Layer">2</param>
+                                            <param id="1" name="Visibility">0</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
@@ -1140,6 +1231,10 @@
                                 <event-block sid="270926814473395">
                                     <conditions />
                                     <actions>
+                                        <action id="-9" name="Set value" sid="510330361871276" type="System">
+                                            <param id="0" name="Variable">AtivarLayerDasCartas</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
                                         <action id="-9" name="Set value" sid="937129605194080" type="System">
                                             <param id="0" name="Variable">FadeCartas</param>
                                             <param id="1" name="Value">0</param>
@@ -1159,6 +1254,10 @@
                                         <action id="0" name="Call function" sid="123547807099349" type="Function">
                                             <param id="0" name="Name">&quot;AtualizarBuffs&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="-4" name="Set layer visible" sid="255149506913257" type="System">
+                                            <param id="0" name="Layer">2</param>
+                                            <param id="1" name="Visibility">0</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1198,10 +1297,6 @@
                         <action id="-9" name="Set value" sid="726518931339412" type="System">
                             <param id="0" name="Variable">FadeCartas</param>
                             <param id="1" name="Value">2</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="950147702964695" type="System">
-                            <param id="0" name="Variable">AtivarLayerDasCartas</param>
-                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -1313,150 +1408,166 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="262558251695501" title="HUD (Cartas)" />
-        <event-block sid="913021724277927">
-            <conditions>
-                <condition id="-2" name="On start of layout" sid="675293754025001" type="System" />
-            </conditions>
-            <actions />
+        <event-group description="" sid="262558251695501" title="HUD (Cartas)">
             <sub-events>
-                <event-block sid="431968265439791">
+                <event-block sid="913021724277927">
                     <conditions>
-                        <condition id="-11" name="For Each" sid="734527664241876" type="System">
-                            <param id="0" name="Object">CartaPlaceHolder</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Spawn another object" sid="204589511262680" type="CartaPlaceHolder">
-                            <param id="0" name="Object">BuffText</param>
-                            <param id="1" name="Layer">&quot;HUD&quot;</param>
-                            <param id="2" name="Image point">0</param>
-                        </action>
-                        <action behavior="Pin" id="0" name="Pin to object" sid="529732794985776" type="BuffText">
-                            <param id="0" name="Pin to">CartaPlaceHolder</param>
-                            <param id="1" name="Mode">0</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="344760753444285" type="BuffText">
-                            <param id="0" name="Instance variable">ID</param>
-                            <param id="1" name="Value">CartaPlaceHolder.ID</param>
-                        </action>
-                        <action id="0" name="Set text" sid="176032977586525" type="BuffText">
-                            <param id="0" name="Text">0</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="434492725649363" type="BuffText">
-                            <param id="0" name="X">CartaPlaceHolder.X -50</param>
-                            <param id="1" name="Y">CartaPlaceHolder.Y + 30</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="439710329590783">
-            <conditions>
-                <condition id="0" name="On function" sid="834903108651038" type="Function">
-                    <param id="0" name="Name">&quot;AtualizarBuffs&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="686889040594637">
-                    <conditions>
-                        <condition id="-11" name="For Each" sid="172882608508616" type="System">
-                            <param id="0" name="Object">CartaPlaceHolder</param>
-                        </condition>
+                        <condition id="-2" name="On start of layout" sid="675293754025001" type="System" />
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="476177112848980">
+                        <event-block sid="431968265439791">
                             <conditions>
-                                <condition id="-8" name="Compare two values" sid="319249617784536" type="System">
-                                    <param id="0" name="First value">CartaPlaceHolder.ID</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">1</param>
+                                <condition id="-11" name="For Each" sid="734527664241876" type="System">
+                                    <param id="0" name="Object">CartaPlaceHolder</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-10" name="Set value" sid="355498023358398" type="CartaPlaceHolder">
-                                    <param id="0" name="Instance variable">QtdBuff</param>
-                                    <param id="1" name="Value">BuffVida</param>
+                                <action id="0" name="Spawn another object" sid="204589511262680" type="CartaPlaceHolder">
+                                    <param id="0" name="Object">BuffText</param>
+                                    <param id="1" name="Layer">&quot;HUD&quot;</param>
+                                    <param id="2" name="Image point">0</param>
                                 </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="794846090581402">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="269558230977934" type="System">
-                                    <param id="0" name="First value">CartaPlaceHolder.ID</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">2</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="849475990478786" type="CartaPlaceHolder">
-                                    <param id="0" name="Instance variable">QtdBuff</param>
-                                    <param id="1" name="Value">BuffDefesa</param>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="529732794985776" type="BuffText">
+                                    <param id="0" name="Pin to">CartaPlaceHolder</param>
+                                    <param id="1" name="Mode">0</param>
                                 </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="192680589624608">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="259036285769979" type="System">
-                                    <param id="0" name="First value">CartaPlaceHolder.ID</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">3</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="335554038957005" type="CartaPlaceHolder">
-                                    <param id="0" name="Instance variable">QtdBuff</param>
-                                    <param id="1" name="Value">BuffTamEspada</param>
+                                <action id="-10" name="Set value" sid="344760753444285" type="BuffText">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Value">CartaPlaceHolder.ID</param>
                                 </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="528715112111779">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="706317026664075" type="System">
-                                    <param id="0" name="First value">CartaPlaceHolder.ID</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">4</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="667443130230731" type="CartaPlaceHolder">
-                                    <param id="0" name="Instance variable">QtdBuff</param>
-                                    <param id="1" name="Value">BuffDano</param>
+                                <action id="0" name="Set text" sid="176032977586525" type="BuffText">
+                                    <param id="0" name="Text">0</param>
                                 </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="439062796394998">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="144774286641170" type="System">
-                                    <param id="0" name="First value">CartaPlaceHolder.ID</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">5</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="244170388762617" type="CartaPlaceHolder">
-                                    <param id="0" name="Instance variable">QtdBuff</param>
-                                    <param id="1" name="Value">BuffVelocAtaque</param>
+                                <action id="-3" name="Set position" sid="434492725649363" type="BuffText">
+                                    <param id="0" name="X">CartaPlaceHolder.X -50</param>
+                                    <param id="1" name="Y">CartaPlaceHolder.Y + 30</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="648244003711362">
+                <event-block sid="439710329590783">
                     <conditions>
-                        <condition id="-11" name="For Each" sid="148515024191870" type="System">
-                            <param id="0" name="Object">BuffText</param>
+                        <condition id="0" name="On function" sid="834903108651038" type="Function">
+                            <param id="0" name="Name">&quot;AtualizarBuffs&quot;</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="0" name="Set text" sid="700670227180153" type="BuffText">
-                            <param id="0" name="Text">CartaPlaceHolder(BuffText.ID).QtdBuff</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="686889040594637">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="172882608508616" type="System">
+                                    <param id="0" name="Object">CartaPlaceHolder</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="476177112848980">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="319249617784536" type="System">
+                                            <param id="0" name="First value">CartaPlaceHolder.ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="355498023358398" type="CartaPlaceHolder">
+                                            <param id="0" name="Instance variable">QtdBuff</param>
+                                            <param id="1" name="Value">BuffVida</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="794846090581402">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="269558230977934" type="System">
+                                            <param id="0" name="First value">CartaPlaceHolder.ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="849475990478786" type="CartaPlaceHolder">
+                                            <param id="0" name="Instance variable">QtdBuff</param>
+                                            <param id="1" name="Value">BuffDefesa</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="192680589624608">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="259036285769979" type="System">
+                                            <param id="0" name="First value">CartaPlaceHolder.ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="335554038957005" type="CartaPlaceHolder">
+                                            <param id="0" name="Instance variable">QtdBuff</param>
+                                            <param id="1" name="Value">BuffTamEspada</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="528715112111779">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="706317026664075" type="System">
+                                            <param id="0" name="First value">CartaPlaceHolder.ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="667443130230731" type="CartaPlaceHolder">
+                                            <param id="0" name="Instance variable">QtdBuff</param>
+                                            <param id="1" name="Value">BuffDano</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="439062796394998">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="144774286641170" type="System">
+                                            <param id="0" name="First value">CartaPlaceHolder.ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">5</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="244170388762617" type="CartaPlaceHolder">
+                                            <param id="0" name="Instance variable">QtdBuff</param>
+                                            <param id="1" name="Value">BuffVelocAtaque</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="474341995166755">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="852647104036294" type="System">
+                                            <param id="0" name="Variable">VidaMax</param>
+                                            <param id="1" name="Value">BuffVida</param>
+                                        </action>
+                                        <action id="-10" name="Add to" sid="557003450042685" type="System">
+                                            <param id="0" name="Variable">Vida</param>
+                                            <param id="1" name="Value">BuffVida</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="648244003711362">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="148515024191870" type="System">
+                                    <param id="0" name="Object">BuffText</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="700670227180153" type="BuffText">
+                                    <param id="0" name="Text">CartaPlaceHolder(BuffText.ID).QtdBuff</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
-        </event-block>
+        </event-group>
     </events>
 </c2eventsheet>

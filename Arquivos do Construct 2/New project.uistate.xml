@@ -11,7 +11,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout order="0">TopDown</layout>
-        <layout order="2">MemoryGame</layout>
         <event-sheet active="1" order="1">TPEventSheet</event-sheet>
     </open-tabs>
     <properties>
@@ -27,12 +26,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="object-folder/TopDown/Colisores/" />
         <folder expanded="1" path="object-folder/TopDown/Sprites/" />
         <folder expanded="0" path="object-folder/TopDown/Sprites/Fase1/" />
-        <folder expanded="1" path="object-folder/TopDown/Sprites/TelaInicial/" />
+        <folder expanded="0" path="object-folder/TopDown/Sprites/TelaInicial/" />
         <folder expanded="1" path="object-folder/TopDown/Sprites/Aisha/" />
         <folder expanded="0" path="object-folder/TopDown/Botoes/" />
         <folder expanded="0" path="object-folder/TopDown/Textos/" />
         <folder expanded="1" path="object-folder/HUD/" />
-        <folder expanded="1" path="object-folder/HUD/TopDown/" />
+        <folder expanded="0" path="object-folder/HUD/TopDown/" />
         <folder expanded="1" path="object-folder/Cartas/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
@@ -45,6 +44,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/GatinhoSprite/" />
         <folder expanded="1" path="animation-folder/InimigoCollision/" />
         <folder expanded="1" path="animation-folder/XPOrb/" />
+        <folder expanded="1" path="animation-folder/ImaColeta/" />
         <folder expanded="1" path="animation-folder/Parede/" />
         <folder expanded="1" path="animation-folder/Chao/" />
         <folder expanded="1" path="animation-folder/TiledSprite/" />

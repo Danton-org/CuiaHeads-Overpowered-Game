@@ -21,7 +21,9 @@
         <plugin author="R0J0hound" id="c2canvas" version="2">Canvas</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
@@ -60,9 +62,14 @@
             <object-folder name="Colisores">
                 <object-type name="Espada" sid="650403909669775">
                     <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Bullet" sid="767764750036063">
+                            <behavior id="Bullet" />
+                        </behavior-type>
+                    </behaviors>
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="296128752798293" speed="5">
-                            <frame duration="1" hotspotX="-0.24" hotspotY="0.492" />
+                            <frame duration="1" hotspotX="0.036" hotspotY="0.496" />
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -118,6 +125,19 @@
                     <plugin id="Sprite" />
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="109656590069611" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="ImaColeta" sid="801999834694926">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Pin" sid="191316076718839">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="414679334994011" speed="5">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         </animation>
                     </animation-folder>
@@ -219,10 +239,13 @@
                             <behavior-type name="Pin" sid="806778065531404">
                                 <behavior id="Pin" />
                             </behavior-type>
+                            <behavior-type name="Fade" sid="328475552199344">
+                                <behavior id="Fade" />
+                            </behavior-type>
                         </behaviors>
                         <animation-folder>
                             <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="172313208896643" speed="5">
-                                <frame duration="1" hotspotX="-0.0954029" hotspotY="0.534604" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Catoom\CuiaHeads-Overpowered-Game\Artes\espadoca.png">
+                                <frame duration="1" hotspotX="0.0148295" hotspotY="0.534604" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Catoom\CuiaHeads-Overpowered-Game\Artes\espadoca.png">
                                     <collision-poly>
                                         <point x="0.602076" y="0.310933" />
                                         <point x="0.961938" y="0.504514" />
@@ -363,8 +386,8 @@
     </object-folder>
     <families />
     <layout-folder>
-        <layout>MemoryGame.xml</layout>
         <layout>TopDown.xml</layout>
+        <layout>MemoryGame.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>TPEventSheet.xml</event-sheet>

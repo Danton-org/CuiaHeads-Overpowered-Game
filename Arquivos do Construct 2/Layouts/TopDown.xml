@@ -7266,17 +7266,29 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Bullet">
+                            <properties>
+                                <speed>800</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>Yes</set-angle>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>2.274734497</x>
                         <y>-87.562667847</y>
                         <z>0</z>
-                        <width>128.232971191</width>
+                        <width>130</width>
                         <height>16</height>
                         <depth>0</depth>
-                        <hotspotX>-0.239999995</hotspotX>
-                        <hotspotY>0.492000014</hotspotY>
+                        <hotspotX>0.035999998</hotspotX>
+                        <hotspotY>0.495999992</hotspotY>
                         <angle>0</angle>
                         <opacity>0</opacity>
                     </world>
@@ -7290,6 +7302,15 @@
                     </properties>
                     <behavior-instances>
                         <behavior-instance type="Pin" />
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>No</active-at-start>
+                                <fade-in-time>0.5</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>0</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -7300,10 +7321,35 @@
                         <width>140</width>
                         <height>40</height>
                         <depth>0</depth>
-                        <hotspotX>-0.095402867</hotspotX>
+                        <hotspotX>0.014829461</hotspotX>
                         <hotspotY>0.534603834</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="ImaColeta" uid="291">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>360.652069092</x>
+                        <y>-199.109298706</y>
+                        <z>0</z>
+                        <width>250</width>
+                        <height>250</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>0</opacity>
                     </world>
                 </instance>
             </instances>
@@ -7317,7 +7363,7 @@
                 <x>0</x>
                 <y>0</y>
             </parallax>
-            <zoom-rate>1</zoom-rate>
+            <zoom-rate>0</zoom-rate>
             <opacity>1</opacity>
             <force-own-texture>0</force-own-texture>
             <global>0</global>
@@ -7529,7 +7575,7 @@
                 <x>0</x>
                 <y>0</y>
             </parallax>
-            <zoom-rate>1</zoom-rate>
+            <zoom-rate>0</zoom-rate>
             <opacity>1</opacity>
             <force-own-texture>0</force-own-texture>
             <global>0</global>
@@ -8016,7 +8062,7 @@
                 <x>0</x>
                 <y>0</y>
             </parallax>
-            <zoom-rate>1</zoom-rate>
+            <zoom-rate>0</zoom-rate>
             <opacity>1</opacity>
             <force-own-texture>0</force-own-texture>
             <global>0</global>
@@ -8110,7 +8156,7 @@
                 <x>0</x>
                 <y>0</y>
             </parallax>
-            <zoom-rate>1</zoom-rate>
+            <zoom-rate>0</zoom-rate>
             <opacity>1</opacity>
             <force-own-texture>0</force-own-texture>
             <global>0</global>

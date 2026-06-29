@@ -1220,16 +1220,24 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Spawn another object" sid="430584829388353" type="CartaPlaceHolder">
-                                    <param id="0" name="Object">Text2</param>
+                                    <param id="0" name="Object">BuffText</param>
                                     <param id="1" name="Layer">&quot;HUD&quot;</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
-                                <action behavior="Pin" id="0" name="Pin to object" sid="403999224599628" type="Text2">
+                                <action behavior="Pin" id="0" name="Pin to object" sid="403999224599628" type="BuffText">
                                     <param id="0" name="Pin to">CartaPlaceHolder</param>
                                     <param id="1" name="Mode">0</param>
                                 </action>
-                                <action id="0" name="Set text" sid="175328600321752" type="Text2">
+                                <action id="-10" name="Set value" sid="808501843480682" type="BuffText">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Value">CartaPlaceHolder.ID</param>
+                                </action>
+                                <action id="0" name="Set text" sid="175328600321752" type="BuffText">
                                     <param id="0" name="Text">0</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="148296165889374" type="BuffText">
+                                    <param id="0" name="X">CartaPlaceHolder.X -50</param>
+                                    <param id="1" name="Y">CartaPlaceHolder.Y + 30</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1251,12 +1259,27 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="872670403974043">
+                                <event-block sid="924020316021330">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="572832208445957" type="System">
                                             <param id="0" name="First value">CartaPlaceHolder.ID</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="772447718515411" type="CartaPlaceHolder">
+                                            <param id="0" name="Instance variable">QtdBuff</param>
+                                            <param id="1" name="Value">BuffVida</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="872670403974043">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="686103652346799" type="System">
+                                            <param id="0" name="First value">CartaPlaceHolder.ID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">2</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -1268,10 +1291,10 @@
                                 </event-block>
                                 <event-block sid="838997957579448">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="686103652346799" type="System">
+                                        <condition id="-8" name="Compare two values" sid="317381710439059" type="System">
                                             <param id="0" name="First value">CartaPlaceHolder.ID</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">2</param>
+                                            <param id="2" name="Second value">3</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -1283,10 +1306,10 @@
                                 </event-block>
                                 <event-block sid="931179998135983">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="317381710439059" type="System">
+                                        <condition id="-8" name="Compare two values" sid="762994209283529" type="System">
                                             <param id="0" name="First value">CartaPlaceHolder.ID</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">3</param>
+                                            <param id="2" name="Second value">4</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -1298,10 +1321,10 @@
                                 </event-block>
                                 <event-block sid="307273997790668">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="762994209283529" type="System">
+                                        <condition id="-8" name="Compare two values" sid="533800344191202" type="System">
                                             <param id="0" name="First value">CartaPlaceHolder.ID</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">4</param>
+                                            <param id="2" name="Second value">5</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -1311,30 +1334,19 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="924020316021330">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="533800344191202" type="System">
-                                            <param id="0" name="First value">CartaPlaceHolder.ID</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">5</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-10" name="Set value" sid="772447718515411" type="CartaPlaceHolder">
-                                            <param id="0" name="Instance variable">QtdBuff</param>
-                                            <param id="1" name="Value">BuffVida</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="994539143807043">
-                                    <conditions />
-                                    <actions>
-                                        <action id="0" name="Set text" sid="266008082931290" type="Text2">
-                                            <param id="0" name="Text">CartaPlaceHolder.QtdBuff</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
                             </sub-events>
+                        </event-block>
+                        <event-block sid="755172741691535">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="757704756923765" type="System">
+                                    <param id="0" name="Object">BuffText</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="266008082931290" type="BuffText">
+                                    <param id="0" name="Text">CartaPlaceHolder(BuffText.ID).QtdBuff</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>

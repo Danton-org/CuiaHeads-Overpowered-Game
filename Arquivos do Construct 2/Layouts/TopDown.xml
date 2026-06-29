@@ -7352,6 +7352,28 @@
                         <opacity>0</opacity>
                     </world>
                 </instance>
+                <instance type="GatinhoSprite" uid="292">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-152.704681396</x>
+                        <y>-11.351496696</y>
+                        <z>0</z>
+                        <width>65.568000793</width>
+                        <height>128.832000732</height>
+                        <depth>0</depth>
+                        <hotspotX>1.487554908</hotspotX>
+                        <hotspotY>0.763785422</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -8336,6 +8358,28 @@
                         <depth>0</depth>
                         <hotspotX>0.526785731</hotspotX>
                         <hotspotY>0.483333319</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Sprite2" uid="293">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-85.048454285</x>
+                        <y>-44.32806015</y>
+                        <z>0</z>
+                        <width>50</width>
+                        <height>50</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

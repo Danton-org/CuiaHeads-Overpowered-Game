@@ -15,6 +15,7 @@
         <variable comment="Variável para o TAMANHO DA ESPADA do gatinho" constant="0" name="TamEspada" sid="479047419099836" static="0" type="number">1</variable>
         <variable comment="Variável para a vida do gatinho" constant="0" name="Vida" sid="439744639138286" static="0" type="number">20</variable>
         <variable comment="Variável para a vida do gatinho" constant="0" name="VidaMax" sid="384865314479407" static="0" type="number">20</variable>
+        <variable constant="0" name="JogoAtivo" sid="465803583065354" static="0" type="number">0</variable>
         <comment>===========&#x0D;&#x0A;Grupos de Ações&#x0D;&#x0A;===========</comment>
         <comment>===========&#x0D;&#x0A;Buffs&#x0D;&#x0A;===========</comment>
         <variable comment="Variável para buffar o salto" constant="0" name="BuffDefesa" sid="809587679344165" static="0" type="number">0</variable>
@@ -49,6 +50,10 @@
                         <action behavior="8Direction" id="7" name="Simulate control" sid="698050946196359" type="GatinhoCollision">
                             <param id="0" name="Control">0</param>
                         </action>
+                        <action id="4" name="Set animation" sid="908923415200870" type="GatinhoSprite">
+                            <param id="0" name="Animation">&quot;runEsquerdo&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="249228623018006">
@@ -65,6 +70,10 @@
                     <actions>
                         <action behavior="8Direction" id="7" name="Simulate control" sid="855294984506334" type="GatinhoCollision">
                             <param id="0" name="Control">2</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="332643709193365" type="GatinhoSprite">
+                            <param id="0" name="Animation">&quot;runCostas&quot;</param>
+                            <param id="1" name="From">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -83,6 +92,10 @@
                         <action behavior="8Direction" id="7" name="Simulate control" sid="783279797448552" type="GatinhoCollision">
                             <param id="0" name="Control">3</param>
                         </action>
+                        <action id="4" name="Set animation" sid="445711841712122" type="GatinhoSprite">
+                            <param id="0" name="Animation">&quot;runFrente&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="232362797310421">
@@ -99,6 +112,21 @@
                     <actions>
                         <action behavior="8Direction" id="7" name="Simulate control" sid="285517406963005" type="GatinhoCollision">
                             <param id="0" name="Control">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="810611508750889" type="GatinhoSprite">
+                            <param id="0" name="Animation">&quot;runDireito&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="768132345342921">
+                    <conditions>
+                        <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="420592990584333" type="GatinhoCollision" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="448036208518414" type="GatinhoSprite">
+                            <param id="0" name="Animation">&quot;idleFrente&quot;</param>
+                            <param id="1" name="From">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -556,103 +584,106 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-group description="" sid="778022633114643" title="Tela de Game Over">
-                            <sub-events>
-                                <event-block sid="699888663025148">
-                                    <conditions>
-                                        <condition id="-14" name="Compare variable" sid="664429673596260" type="System">
-                                            <param id="0" name="Variable">Vida</param>
-                                            <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Value">0</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-13" name="Set time scale" sid="490347946934616" type="System">
-                                            <param id="0" name="Time scale">0</param>
-                                        </action>
-                                        <action id="-4" name="Set layer visible" sid="102117590990614" type="System">
-                                            <param id="0" name="Layer">3</param>
-                                            <param id="1" name="Visibility">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="115061954728171">
-                                    <conditions>
-                                        <condition id="0" name="On clicked" sid="973961617621003" type="TryAgain" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="942141105400728" type="System">
-                                            <param id="0" name="Variable">SorteioSpawn</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="793542925282758" type="System">
-                                            <param id="0" name="Variable">Horda</param>
-                                            <param id="1" name="Value">1</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="285477557291307" type="System">
-                                            <param id="0" name="Variable">TempoSpawn</param>
-                                            <param id="1" name="Value">1</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="123409119143932" type="System">
-                                            <param id="0" name="Variable">XP</param>
-                                            <param id="1" name="Value">0.1</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="948942575858257" type="System">
-                                            <param id="0" name="Variable">XPMax</param>
-                                            <param id="1" name="Value">10</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="528058247789191" type="System">
-                                            <param id="0" name="Variable">EspadaDMG</param>
-                                            <param id="1" name="Value">5</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="494885806287059" type="System">
-                                            <param id="0" name="Variable">EspadaVEL</param>
-                                            <param id="1" name="Value">0.3</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="877991760829122" type="System">
-                                            <param id="0" name="Variable">TamEspada</param>
-                                            <param id="1" name="Value">5</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="127990215073978" type="System">
-                                            <param id="0" name="Variable">BuffDano</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="163647296667864" type="System">
-                                            <param id="0" name="Variable">BuffDefesa</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="831658597823927" type="System">
-                                            <param id="0" name="Variable">BuffTamEspada</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="561749371748403" type="System">
-                                            <param id="0" name="Variable">BuffVelocAtaque</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="941955251392390" type="System">
-                                            <param id="0" name="Variable">BuffVida</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="641600735928424" type="System">
-                                            <param id="0" name="Variable">Vida</param>
-                                            <param id="1" name="Value">20</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="143905657895009" type="System">
-                                            <param id="0" name="Variable">VidaMax</param>
-                                            <param id="1" name="Value">20</param>
-                                        </action>
-                                        <action id="-13" name="Set time scale" sid="613502586271244" type="System">
-                                            <param id="0" name="Time scale">1.0</param>
-                                        </action>
-                                        <action id="-26" name="Restart layout" sid="347429617844592" type="System" />
-                                        <action id="-4" name="Set layer visible" sid="149396582753523" type="System">
-                                            <param id="0" name="Layer">3</param>
-                                            <param id="1" name="Visibility">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-group>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="778022633114643" title="Tela de Game Over">
+                    <sub-events>
+                        <event-block sid="699888663025148">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="664429673596260" type="System">
+                                    <param id="0" name="Variable">Vida</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set time scale" sid="490347946934616" type="System">
+                                    <param id="0" name="Time scale">0</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="102117590990614" type="System">
+                                    <param id="0" name="Layer">3</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="115061954728171">
+                            <conditions>
+                                <condition id="0" name="On clicked" sid="973961617621003" type="TryAgain" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="942141105400728" type="System">
+                                    <param id="0" name="Variable">SorteioSpawn</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="793542925282758" type="System">
+                                    <param id="0" name="Variable">Horda</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="285477557291307" type="System">
+                                    <param id="0" name="Variable">TempoSpawn</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="123409119143932" type="System">
+                                    <param id="0" name="Variable">XP</param>
+                                    <param id="1" name="Value">0.1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="948942575858257" type="System">
+                                    <param id="0" name="Variable">XPMax</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="528058247789191" type="System">
+                                    <param id="0" name="Variable">EspadaDMG</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="494885806287059" type="System">
+                                    <param id="0" name="Variable">EspadaVEL</param>
+                                    <param id="1" name="Value">0.3</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="877991760829122" type="System">
+                                    <param id="0" name="Variable">TamEspada</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="127990215073978" type="System">
+                                    <param id="0" name="Variable">BuffDano</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="163647296667864" type="System">
+                                    <param id="0" name="Variable">BuffDefesa</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="831658597823927" type="System">
+                                    <param id="0" name="Variable">BuffTamEspada</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="561749371748403" type="System">
+                                    <param id="0" name="Variable">BuffVelocAtaque</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="941955251392390" type="System">
+                                    <param id="0" name="Variable">BuffVida</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="641600735928424" type="System">
+                                    <param id="0" name="Variable">Vida</param>
+                                    <param id="1" name="Value">20</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="143905657895009" type="System">
+                                    <param id="0" name="Variable">VidaMax</param>
+                                    <param id="1" name="Value">20</param>
+                                </action>
+                                <action id="-13" name="Set time scale" sid="613502586271244" type="System">
+                                    <param id="0" name="Time scale">1.0</param>
+                                </action>
+                                <action id="-26" name="Restart layout" sid="347429617844592" type="System" />
+                                <action id="-4" name="Set layer visible" sid="149396582753523" type="System">
+                                    <param id="0" name="Layer">3</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="-20" name="Set layout scale" sid="160722758423825" type="System">
+                                    <param id="0" name="Scale">1.0</param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-group>
                 <event-group description="" sid="490871347316059" title="Início de Layout">
@@ -724,6 +755,10 @@
                                 </action>
                                 <action id="9" name="Set scale" sid="250927644585844" type="ImaColeta">
                                     <param id="0" name="Scale">1 + (BuffTamEspada * 0.4)</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="682098267792075" type="GatinhoSprite">
+                                    <param id="0" name="Object">GatinhoCollision</param>
+                                    <param id="1" name="Image point (optional)">0</param>
                                 </action>
                             </actions>
                         </event-block>

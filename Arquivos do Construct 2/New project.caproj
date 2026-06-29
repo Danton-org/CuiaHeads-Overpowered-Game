@@ -89,6 +89,10 @@
                             <behavior id="Flash" />
                         </behavior-type>
                     </behaviors>
+                    <container>
+                        <type>GatinhoSprite</type>
+                        <type>GatinhoCollision</type>
+                    </container>
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="947157954056118" speed="5">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -97,9 +101,109 @@
                 </object-type>
                 <object-type name="GatinhoSprite" sid="332183002523043">
                     <plugin id="Sprite" />
+                    <container>
+                        <type>GatinhoSprite</type>
+                        <type>GatinhoCollision</type>
+                    </container>
                     <animation-folder>
-                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="452145413204198" speed="5">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <animation framecount="1" loop="0" name="idleFrente" pingpong="0" repeatcount="1" repeatto="0" sid="597805762352232" speed="5">
+                            <frame duration="1" hotspotX="1.48755" hotspotY="0.763785" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame idle2.png">
+                                <collision-poly>
+                                    <point x="0.158126" y="0.0871833" />
+                                    <point x="0.70571" y="0.763785" />
+                                    <point x="0.734993" y="0.380775" />
+                                    <point x="0.327965" y="0.763785" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="4" loop="0" name="runFrente" pingpong="0" repeatcount="1" repeatto="0" sid="728413214153532" speed="5">
+                            <frame duration="1" hotspotX="1.49635" hotspotY="0.76952" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame front 1.png">
+                                <collision-poly>
+                                    <point x="0.129927" y="0.0668168" />
+                                    <point x="0.689051" y="0.76952" />
+                                    <point x="0.724088" y="0.372372" />
+                                    <point x="0.261314" y="0.76952" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="1.53673" hotspotY="0.753123" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame front 2.png" />
+                            <frame duration="1" hotspotX="1.46198" hotspotY="0.771257" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame front 3.png" />
+                            <frame duration="1" hotspotX="1.53673" hotspotY="0.753123" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="idleCosta" pingpong="0" repeatcount="1" repeatto="0" sid="327105400207171" speed="5">
+                            <frame duration="1" hotspotX="1.52402" hotspotY="0.763785" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\back idle.png">
+                                <collision-poly>
+                                    <point x="0.159159" y="0.0864381" />
+                                    <point x="0.722222" y="0.763785" />
+                                    <point x="0.749249" y="0.379285" />
+                                    <point x="0.334835" y="0.763785" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="4" loop="0" name="runCostas" pingpong="0" repeatcount="1" repeatto="0" sid="225425102889015" speed="5">
+                            <frame duration="1" hotspotX="1.52402" hotspotY="0.753123" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\back 1.png" />
+                            <frame duration="1" hotspotX="1.52102" hotspotY="0.7559" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\back 3.png" />
+                            <frame duration="1" hotspotX="1.48348" hotspotY="0.750366" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\back 4.png" />
+                            <frame duration="1" hotspotX="1.497" hotspotY="0.739067" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\back 2.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="idleDireito" pingpong="0" repeatcount="1" repeatto="0" sid="655231479200898" speed="5">
+                            <frame duration="1" hotspotX="1.50174" hotspotY="0.742711" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame idle.png">
+                                <collision-poly>
+                                    <point x="0.28125" y="0.230321" />
+                                    <point x="0.696181" y="0.742711" />
+                                    <point x="0.824653" y="0.458455" />
+                                    <point x="0.381944" y="0.742711" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="4" loop="0" name="runDireito" pingpong="0" repeatcount="1" repeatto="0" sid="930783021561969" speed="5">
+                            <frame duration="1" hotspotX="1.1256" hotspotY="0.781395" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame1.png" />
+                            <frame duration="1" hotspotX="1.45719" hotspotY="0.709389" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame2.png" />
+                            <frame duration="1" hotspotX="1.04592" hotspotY="0.750198" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame3.png" />
+                            <frame duration="1" hotspotX="1.45719" hotspotY="0.709389" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="idleEsquerdo" pingpong="0" repeatcount="1" repeatto="0" sid="712667934225743" speed="5">
+                            <frame duration="1" hotspotX="-0.501736" hotspotY="0.742711" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame idle.png">
+                                <collision-poly>
+                                    <point x="0.618056" y="0.742711" />
+                                    <point x="0.175347" y="0.458455" />
+                                    <point x="0.303819" y="0.742711" />
+                                    <point x="0.71875" y="0.230321" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="4" loop="0" name="runEsquerdo" pingpong="0" repeatcount="1" repeatto="0" sid="259530543686873" speed="5">
+                            <frame duration="1" hotspotX="-0.125598" hotspotY="0.781395" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame1.png">
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="-0.457189" hotspotY="0.709389" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame2.png">
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="-0.0459184" hotspotY="0.750198" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame3.png">
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="-0.457189" hotspotY="0.709389">
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -382,6 +486,14 @@
         </object-type>
         <object-type name="Function" sid="688439712595466">
             <plugin id="Function" />
+        </object-type>
+        <object-type name="Sprite2" sid="182761978023893">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="800461300157451" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />

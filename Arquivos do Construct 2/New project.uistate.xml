@@ -22,7 +22,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <families-expanded root="0" />
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
-        <folder expanded="0" path="object-folder/TopDown/" />
+        <folder expanded="1" path="object-folder/TopDown/" />
         <folder expanded="1" path="object-folder/TopDown/Colisores/" />
         <folder expanded="1" path="object-folder/TopDown/Sprites/" />
         <folder expanded="0" path="object-folder/TopDown/Sprites/Fase1/" />
@@ -31,7 +31,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="0" path="object-folder/TopDown/Botoes/" />
         <folder expanded="0" path="object-folder/TopDown/Textos/" />
         <folder expanded="1" path="object-folder/HUD/" />
-        <folder expanded="0" path="object-folder/HUD/TopDown/" />
+        <folder expanded="1" path="object-folder/HUD/TopDown/" />
         <folder expanded="1" path="object-folder/Cartas/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />

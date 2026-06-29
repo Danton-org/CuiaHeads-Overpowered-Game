@@ -2,7 +2,7 @@
 <c2layout>
     <name>MemoryGame</name>
     <sid>137084857549355</sid>
-    <event-sheet>MemoryEventSheet</event-sheet>
+    <event-sheet></event-sheet>
     <size>
         <width>854</width>
         <height>480</height>

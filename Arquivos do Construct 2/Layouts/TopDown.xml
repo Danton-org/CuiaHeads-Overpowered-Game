@@ -855,6 +855,7 @@
                     <instance-variables>
                         <InimigoVida>10</InimigoVida>
                         <InimigoDano>2</InimigoDano>
+                        <InimigoVelocidade>2</InimigoVelocidade>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Solid">

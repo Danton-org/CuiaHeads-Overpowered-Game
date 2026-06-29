@@ -4,6 +4,7 @@
     <name>TPEventSheet</name>
     <events>
         <comment>===========&#x0D;&#x0A;Variáveis para o Sistema de XP e Hordas&#x0D;&#x0A;===========</comment>
+        <variable constant="0" name="SorteioSpawn" sid="611282055887532" static="0" type="number">0</variable>
         <variable constant="0" name="Horda" sid="393379827816464" static="0" type="number">1</variable>
         <variable comment="Segundos para spawnar algum bicho (quanto menor = mais bicho)" constant="0" name="TempoSpawn" sid="289716551127425" static="0" type="number">1</variable>
         <variable constant="0" name="XP" sid="688252286558378" static="0" type="number">0.1</variable>
@@ -86,6 +87,11 @@
                         <condition id="2" name="Mouse button is down" sid="899465532793987" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
                         </condition>
+                        <condition id="-8" name="Compare two values" sid="542728717089744" type="System">
+                            <param id="0" name="First value">timescale</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="11" name="Set collisions enabled" sid="232200606944192" type="Espada">
@@ -102,13 +108,11 @@
                             <param id="0" name="X">GatinhoCollision.X</param>
                             <param id="1" name="Y">GatinhoCollision.Y</param>
                         </action>
-                        <action id="-22" name="Set angle toward position" sid="375806706433345" type="Espada">
-                            <param id="0" name="X">Mouse.X</param>
-                            <param id="1" name="Y">Mouse.Y</param>
+                        <action id="-8" name="Set angle" sid="960479095735975" type="Espada">
+                            <param id="0" name="Angle">anglelerp(Espada.Angle, angle(Espada.X, Espada.Y, Mouse.X, Mouse.Y), 0.08 + BuffVelocAtaque)</param>
                         </action>
-                        <action id="-22" name="Set angle toward position" sid="648151147601956" type="Sword">
-                            <param id="0" name="X">Mouse.X</param>
-                            <param id="1" name="Y">Mouse.Y</param>
+                        <action id="-8" name="Set angle" sid="604320816861712" type="Sword">
+                            <param id="0" name="Angle">Espada.Angle</param>
                         </action>
                     </actions>
                 </event-block>
@@ -116,6 +120,11 @@
                     <conditions>
                         <condition id="3" name="On button released" sid="431918446604756" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="200027412593533" type="System">
+                            <param id="0" name="First value">timescale</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -147,24 +156,8 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="362403024548947" title="Inimigo">
+        <event-group description="" sid="117674354507895" title="Sistema - Inimigos">
             <sub-events>
-                <event-block sid="627206080517388">
-                    <conditions>
-                        <condition id="-1" name="Every tick" sid="638351099691874" type="System" />
-                        <condition id="-8" name="Compare two values" sid="736412221540895" type="System">
-                            <param id="0" name="First value">timescale</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Second value">1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-23" name="Move at angle" sid="648063338152993" type="InimigoCollision">
-                            <param id="0" name="Angle">angle(Self.X, Self.Y, GatinhoCollision.X, GatinhoCollision.Y)</param>
-                            <param id="1" name="Distance">2</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="186781588076072">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="928026961932137" type="Espada">
@@ -207,7 +200,7 @@
                     <actions>
                         <action id="-11" name="Subtract from" sid="618806463871474" type="System">
                             <param id="0" name="Variable">Vida</param>
-                            <param id="1" name="Value">InimigoCollision.InimigoDano</param>
+                            <param id="1" name="Value">max(1, InimigoCollision.InimigoDano - BuffDefesa)</param>
                         </action>
                         <action behavior="Flash" id="0" name="Flash" sid="333733143347031" type="GatinhoCollision">
                             <param id="0" name="&apos;On&apos; time">0.1</param>
@@ -216,9 +209,145 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="896282469204256">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="217765584173967" type="System">
+                            <param id="0" name="Interval (seconds)">TempoSpawn</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="522357930501809" type="System">
+                            <param id="0" name="First value">timescale</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="711300215142905" type="System">
+                            <param id="0" name="Object to create">InimigoCollision</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">GatinhoCollision.X + cos(random(360)) * random(800, 1000)</param>
+                            <param id="3" name="Y">GatinhoCollision.Y + sin(random(360)) * random(800, 1000)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="506051450969427" type="System">
+                            <param id="0" name="Variable">SorteioSpawn</param>
+                            <param id="1" name="Value">random(1, 100)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="557388973361896" type="System">
+                            <param id="0" name="Variable">SorteioSpawn</param>
+                            <param id="1" name="Value">random(1, 100)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Spawna - Ratos</comment>
+                        <event-block sid="611127783500223">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="818594881031790" type="System">
+                                    <param id="0" name="Variable">Horda</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="673162733681517" type="InimigoCollision">
+                                    <param id="0" name="Instance variable">InimigoVida</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="780569853073773" type="InimigoCollision">
+                                    <param id="0" name="Instance variable">InimigoVelocidade</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="347804914287565" type="InimigoCollision">
+                                    <param id="0" name="Instance variable">InimigoDano</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Spawna - Ratos, Cães</comment>
+                        <event-block sid="565947211584099">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="476347655908477" type="System">
+                                    <param id="0" name="Variable">Horda</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="971541633953292" type="System">
+                                    <param id="0" name="Variable">Horda</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">15</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>Ratos</comment>
+                                <event-block sid="248147811346912">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="752449121759272" type="System">
+                                            <param id="0" name="Variable">SorteioSpawn</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">50</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="697848146340965" type="InimigoCollision">
+                                            <param id="0" name="Instance variable">InimigoVida</param>
+                                            <param id="1" name="Value">10</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="491062907382019" type="InimigoCollision">
+                                            <param id="0" name="Instance variable">InimigoVelocidade</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="929458177650164" type="InimigoCollision">
+                                            <param id="0" name="Instance variable">InimigoDano</param>
+                                            <param id="1" name="Value">5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>Cães</comment>
+                                <event-block sid="716806428667228">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="694269316120703" type="System">
+                                            <param id="0" name="Variable">SorteioSpawn</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">50</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="503972404871686" type="InimigoCollision">
+                                            <param id="0" name="Instance variable">InimigoVida</param>
+                                            <param id="1" name="Value">15</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="588369836786080" type="InimigoCollision">
+                                            <param id="0" name="Instance variable">InimigoVelocidade</param>
+                                            <param id="1" name="Value">4</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="972802865624986" type="InimigoCollision">
+                                            <param id="0" name="Instance variable">InimigoDano</param>
+                                            <param id="1" name="Value">7</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="674913444606064">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="939699633319174" type="System" />
+                        <condition id="-14" name="Compare variable" sid="588075682289576" type="System">
+                            <param id="0" name="Variable">Vida</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-23" name="Move at angle" sid="802648838464809" type="InimigoCollision">
+                            <param id="0" name="Angle">angle(Self.X, Self.Y, GatinhoCollision.X, GatinhoCollision.Y)</param>
+                            <param id="1" name="Distance">InimigoCollision.InimigoVelocidade</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="318817541762017" title="Sistema">
+        <event-group description="" sid="318817541762017" title="Sistema Geral">
             <sub-events>
                 <event-group description="" sid="119782121193751" title="Tela Inicial - Botões">
                     <sub-events>
@@ -409,6 +538,10 @@
                                         <condition id="0" name="On clicked" sid="973961617621003" type="TryAgain" />
                                     </conditions>
                                     <actions>
+                                        <action id="-9" name="Set value" sid="942141105400728" type="System">
+                                            <param id="0" name="Variable">SorteioSpawn</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
                                         <action id="-9" name="Set value" sid="793542925282758" type="System">
                                             <param id="0" name="Variable">Horda</param>
                                             <param id="1" name="Value">1</param>
@@ -493,30 +626,6 @@
                                 </action>
                                 <action id="-15" name="Set visible" sid="572882914185449" type="Sword">
                                     <param id="0" name="Visibility">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-group>
-                <event-group description="" sid="107738227429402" title="Movimentação do Inimigo">
-                    <sub-events>
-                        <event-block sid="896282469204256">
-                            <conditions>
-                                <condition id="-6" name="Every X seconds" sid="217765584173967" type="System">
-                                    <param id="0" name="Interval (seconds)">TempoSpawn</param>
-                                </condition>
-                                <condition id="-8" name="Compare two values" sid="522357930501809" type="System">
-                                    <param id="0" name="First value">timescale</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-3" name="Create object" sid="711300215142905" type="System">
-                                    <param id="0" name="Object to create">InimigoCollision</param>
-                                    <param id="1" name="Layer">0</param>
-                                    <param id="2" name="X">GatinhoCollision.X + cos(random(360)) * random(800, 1000)</param>
-                                    <param id="3" name="Y">GatinhoCollision.Y + sin(random(360)) * random(800, 1000)</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -781,7 +890,7 @@
                                     <actions>
                                         <action id="-10" name="Add to" sid="112183205644843" type="System">
                                             <param id="0" name="Variable">BuffDefesa</param>
-                                            <param id="1" name="Value">3</param>
+                                            <param id="1" name="Value">0.6</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -826,7 +935,7 @@
                                     <actions>
                                         <action id="-10" name="Add to" sid="521083767639557" type="System">
                                             <param id="0" name="Variable">BuffVelocAtaque</param>
-                                            <param id="1" name="Value">3</param>
+                                            <param id="1" name="Value">0.03</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -889,7 +998,7 @@
                                     <actions>
                                         <action id="-10" name="Add to" sid="274154957625223" type="System">
                                             <param id="0" name="Variable">BuffDefesa</param>
-                                            <param id="1" name="Value">1</param>
+                                            <param id="1" name="Value">0.2</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -934,7 +1043,7 @@
                                     <actions>
                                         <action id="-10" name="Add to" sid="911406425082656" type="System">
                                             <param id="0" name="Variable">BuffVelocAtaque</param>
-                                            <param id="1" name="Value">1</param>
+                                            <param id="1" name="Value">0.01</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -964,7 +1073,7 @@
                                     <actions>
                                         <action id="-10" name="Add to" sid="752027180744565" type="System">
                                             <param id="0" name="Variable">BuffDefesa</param>
-                                            <param id="1" name="Value">1</param>
+                                            <param id="1" name="Value">0.2</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1009,7 +1118,7 @@
                                     <actions>
                                         <action id="-10" name="Add to" sid="995217373792703" type="System">
                                             <param id="0" name="Variable">BuffVelocAtaque</param>
-                                            <param id="1" name="Value">1</param>
+                                            <param id="1" name="Value">0.01</param>
                                         </action>
                                     </actions>
                                 </event-block>

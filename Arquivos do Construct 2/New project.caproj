@@ -101,6 +101,7 @@
                     <instance-variables>
                         <instance-variable name="InimigoVida" sid="196949316416757" type="number" />
                         <instance-variable name="InimigoDano" sid="570796806592147" type="number" />
+                        <instance-variable name="InimigoVelocidade" sid="977791996754941" type="number" />
                     </instance-variables>
                     <behaviors>
                         <behavior-type name="Solid" sid="996193742617792">
@@ -363,7 +364,6 @@
         <layout>TopDown.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>MemoryEventSheet.xml</event-sheet>
         <event-sheet>TPEventSheet.xml</event-sheet>
     </event-folder>
     <global-instances>

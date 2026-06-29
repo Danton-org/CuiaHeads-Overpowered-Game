@@ -11,6 +11,7 @@
     <saved-with-version>28000</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="JP Deblonde" id="SVGImage" version="1">SVG Image</plugin>
@@ -263,7 +264,7 @@
                 </object-type>
                 <object-type name="AreaCartas" sid="132479196744755">
                     <plugin id="c2canvas" />
-                    <texture />
+                    <texture original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de Alcance.png" />
                 </object-type>
                 <object-type name="PauseBotao" sid="302132088121029">
                     <plugin id="c2canvas" />
@@ -317,6 +318,23 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="CartaPlaceHolder" sid="683148350714173">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="ID" sid="225918681504334" type="number" />
+                    <instance-variable name="QtdBuff" sid="213812452881663" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="6" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="349309102292226" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\CartaFund.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta_de_Armadura.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de Alcance.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de Força.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de Ataque speed.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de vida.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-type name="Mouse" sid="647187985110911">
             <plugin id="Mouse" />
@@ -326,6 +344,17 @@
         </object-type>
         <object-type name="SVGImage" sid="820759492291505">
             <plugin id="SVGImage" />
+        </object-type>
+        <object-type name="Text2" sid="503690600036989">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Pin" sid="756103758169799">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="Function" sid="688439712595466">
+            <plugin id="Function" />
         </object-type>
     </object-folder>
     <families />
@@ -340,6 +369,7 @@
     <global-instances>
         <global-instance type="Mouse" uid="1" />
         <global-instance type="Keyboard" uid="25" />
+        <global-instance type="Function" uid="289" />
     </global-instances>
     <sounds-folder />
     <music-folder />

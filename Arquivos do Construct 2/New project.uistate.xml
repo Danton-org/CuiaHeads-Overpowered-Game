@@ -10,8 +10,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="0">TopDown</layout>
-        <event-sheet order="1">TPEventSheet</event-sheet>
+        <layout order="0">TopDown</layout>
+        <event-sheet active="1" order="1">TPEventSheet</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -30,7 +30,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="object-folder/TopDown/Sprites/Aisha/" />
         <folder expanded="0" path="object-folder/TopDown/Botoes/" />
         <folder expanded="0" path="object-folder/TopDown/Textos/" />
-        <folder expanded="0" path="object-folder/HUD/" />
+        <folder expanded="1" path="object-folder/HUD/" />
         <folder expanded="0" path="object-folder/HUD/TopDown/" />
         <folder expanded="1" path="object-folder/Cartas/" />
         <folder expanded="1" path="layout-folder/" />
@@ -56,5 +56,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Sword/" />
         <folder expanded="1" path="animation-folder/CartaV2/" />
         <folder expanded="1" path="animation-folder/Sprite/" />
+        <folder expanded="1" path="animation-folder/CartaPlaceHolder/" />
     </folders-expanded>
 </c2uistate>

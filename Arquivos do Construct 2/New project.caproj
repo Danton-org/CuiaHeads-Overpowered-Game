@@ -10,6 +10,7 @@
     <unique-id>22jpz9j55nk2f</unique-id>
     <saved-with-version>28000</saved-with-version>
     <used-plugins>
+        <plugin author="Pinco, Scirra" id="AdvTextBox" version="1.700000048">Advanced Text box</plugin>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
@@ -17,7 +18,6 @@
         <plugin author="JP Deblonde" id="SVGImage" version="1">SVG Image</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
-        <plugin author="Sir_G" id="TiledSprite" version="2">Tiled Sprite</plugin>
         <plugin author="R0J0hound" id="c2canvas" version="2">Canvas</plugin>
     </used-plugins>
     <used-behaviors>
@@ -90,118 +90,12 @@
                         </behavior-type>
                     </behaviors>
                     <container>
-                        <type>GatinhoSprite</type>
+                        <type>Aisha</type>
                         <type>GatinhoCollision</type>
                     </container>
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="947157954056118" speed="5">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        </animation>
-                    </animation-folder>
-                </object-type>
-                <object-type name="GatinhoSprite" sid="332183002523043">
-                    <plugin id="Sprite" />
-                    <behaviors>
-                        <behavior-type name="Flash" sid="172155422465639">
-                            <behavior id="Flash" />
-                        </behavior-type>
-                    </behaviors>
-                    <container>
-                        <type>GatinhoSprite</type>
-                        <type>GatinhoCollision</type>
-                    </container>
-                    <animation-folder>
-                        <animation framecount="1" loop="1" name="idleFrente" pingpong="0" repeatcount="1" repeatto="0" sid="597805762352232" speed="5">
-                            <frame duration="1" hotspotX="0.497804" hotspotY="0.495529" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame idle2.png">
-                                <collision-poly>
-                                    <point x="0.158126" y="0.0871833" />
-                                    <point x="0.70571" y="0.763785" />
-                                    <point x="0.734993" y="0.380775" />
-                                    <point x="0.327965" y="0.763785" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="4" loop="1" name="runFrente" pingpong="0" repeatcount="1" repeatto="0" sid="728413214153532" speed="5">
-                            <frame duration="1" hotspotX="0.509745" hotspotY="0.488611" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame front 2.png" />
-                            <frame duration="1" hotspotX="0.487805" hotspotY="0.500376" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame front 3.png" />
-                            <frame duration="1" hotspotX="0.509745" hotspotY="0.488611" />
-                            <frame duration="1" hotspotX="0.49635" hotspotY="0.499249" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame front 1.png">
-                                <collision-poly>
-                                    <point x="0.129927" y="0.0668168" />
-                                    <point x="0.689051" y="0.76952" />
-                                    <point x="0.724088" y="0.372372" />
-                                    <point x="0.261314" y="0.76952" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="1" loop="1" name="idleCosta" pingpong="0" repeatcount="1" repeatto="0" sid="327105400207171" speed="5">
-                            <frame duration="1" hotspotX="0.510511" hotspotY="0.495529" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\back idle.png">
-                                <collision-poly>
-                                    <point x="0.159159" y="0.0864381" />
-                                    <point x="0.722222" y="0.763785" />
-                                    <point x="0.749249" y="0.379285" />
-                                    <point x="0.334835" y="0.763785" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="4" loop="1" name="runCostas" pingpong="0" repeatcount="1" repeatto="0" sid="225425102889015" speed="5">
-                            <frame duration="1" hotspotX="0.510511" hotspotY="0.490413" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\back 3.png" />
-                            <frame duration="1" hotspotX="0.510511" hotspotY="0.486823" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\back 4.png" />
-                            <frame duration="1" hotspotX="0.510511" hotspotY="0.484694" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\back 2.png" />
-                            <frame duration="1" hotspotX="0.510511" hotspotY="0.488611" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\back 1.png" />
-                        </animation>
-                        <animation framecount="1" loop="1" name="idleDireito" pingpong="0" repeatcount="1" repeatto="0" sid="655231479200898" speed="5">
-                            <frame duration="1" hotspotX="0.590278" hotspotY="0.485423" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame idle.png">
-                                <collision-poly>
-                                    <point x="0.28125" y="0.230321" />
-                                    <point x="0.696181" y="0.742711" />
-                                    <point x="0.824653" y="0.458455" />
-                                    <point x="0.381944" y="0.742711" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="4" loop="1" name="runDireito" pingpong="0" repeatcount="1" repeatto="0" sid="930783021561969" speed="5">
-                            <frame duration="1" hotspotX="0.549273" hotspotY="0.495529" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame2.png" />
-                            <frame duration="1" hotspotX="0.346939" hotspotY="0.525692" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame3.png" />
-                            <frame duration="1" hotspotX="0.549273" hotspotY="0.495529" />
-                            <frame duration="1" hotspotX="0.406699" hotspotY="0.515504" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame1.png" />
-                        </animation>
-                        <animation framecount="1" loop="1" name="idleEsquerdo" pingpong="0" repeatcount="1" repeatto="0" sid="712667934225743" speed="5">
-                            <frame duration="1" hotspotX="0.590278" hotspotY="0.484694" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame idle.png">
-                                <collision-poly>
-                                    <point x="0.618056" y="0.742711" />
-                                    <point x="0.175347" y="0.458455" />
-                                    <point x="0.303819" y="0.742711" />
-                                    <point x="0.71875" y="0.230321" />
-                                </collision-poly>
-                            </frame>
-                        </animation>
-                        <animation framecount="4" loop="1" name="runEsquerdo" pingpong="0" repeatcount="1" repeatto="0" sid="259530543686873" speed="5">
-                            <frame duration="1" hotspotX="0.468498" hotspotY="0.473174" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame2.png">
-                                <collision-poly>
-                                    <point x="1" y="1" />
-                                    <point x="0" y="1" />
-                                    <point x="0" y="0" />
-                                    <point x="1" y="0" />
-                                </collision-poly>
-                            </frame>
-                            <frame duration="1" hotspotX="0.468498" hotspotY="0.473174">
-                                <collision-poly>
-                                    <point x="1" y="1" />
-                                    <point x="0" y="1" />
-                                    <point x="0" y="0" />
-                                    <point x="1" y="0" />
-                                </collision-poly>
-                            </frame>
-                            <frame duration="1" hotspotX="0.510204" hotspotY="0.474308" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame3.png">
-                                <collision-poly>
-                                    <point x="1" y="1" />
-                                    <point x="0" y="1" />
-                                    <point x="0" y="0" />
-                                    <point x="1" y="0" />
-                                </collision-poly>
-                            </frame>
-                            <frame duration="1" hotspotX="-0.125598" hotspotY="0.781395" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame1.png" />
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -216,10 +110,43 @@
                         <behavior-type name="Solid" sid="996193742617792">
                             <behavior id="solid" />
                         </behavior-type>
+                        <behavior-type name="Sine" sid="111879967866332">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                        <behavior-type name="Sine2" sid="217926004750006">
+                            <behavior id="Sin" />
+                        </behavior-type>
                     </behaviors>
                     <animation-folder>
-                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="222790730208179" speed="5">
-                            <frame duration="1" hotspotX="0.496" hotspotY="0.456" />
+                        <animation framecount="1" loop="0" name="Rato" pingpong="0" repeatcount="1" repeatto="0" sid="668777577565053" speed="5">
+                            <frame duration="1" hotspotX="0.555" hotspotY="0.484375" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Catoom\CuiaHeads-Overpowered-Game\Artes\Inimigos\Mice.png">
+                                <collision-poly>
+                                    <point x="0.0842614" y="0.21771" />
+                                    <point x="0.63196" y="0.114276" />
+                                    <point x="0.371122" y="0.882851" />
+                                    <point x="0.63196" y="0.871358" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Cachorro" pingpong="0" repeatcount="1" repeatto="0" sid="577040621583241" speed="5">
+                            <frame duration="1" hotspotX="0.498088" hotspotY="0.583051" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Catoom\CuiaHeads-Overpowered-Game\Artes\Inimigos\Dog.png">
+                                <collision-poly>
+                                    <point x="0.833652" y="0.748023" />
+                                    <point x="0.50478" y="0.763842" />
+                                    <point x="0.491396" y="0.922034" />
+                                    <point x="0.367113" y="0.894915" />
+                                    <point x="0.0296367" y="0.748023" />
+                                    <point x="0.204589" y="0.40904" />
+                                    <point x="0.491396" y="0.309605" />
+                                    <point x="0.951243" y="0.20452" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Pombo" pingpong="0" repeatcount="1" repeatto="0" sid="631166155403038" speed="5">
+                            <frame duration="1" hotspotX="0.509756" hotspotY="0.469613" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Catoom\CuiaHeads-Overpowered-Game\Artes\Inimigos\Pigeon.png" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="Vassoura" pingpong="0" repeatcount="1" repeatto="0" sid="917277573562234" speed="5">
+                            <frame duration="1" hotspotX="0.485459" hotspotY="0.413866" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Catoom\CuiaHeads-Overpowered-Game\Artes\Inimigos\Brush.png" />
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -247,7 +174,7 @@
             </object-folder>
             <object-folder name="Sprites">
                 <object-folder name="Fase1">
-                    <object-type name="Parede" sid="993209897352841">
+                    <object-type name="Parede1" sid="993209897352841">
                         <plugin id="Sprite" />
                         <behaviors>
                             <behavior-type name="Solid" sid="796707358895229">
@@ -256,7 +183,16 @@
                         </behaviors>
                         <animation-folder>
                             <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="538959114742227" speed="5">
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\muroExemplo.png" />
+                                <frame duration="1" hotspotX="0.501171" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Catoom\CuiaHeads-Overpowered-Game\Artes\Mapa\parede2.png">
+                                    <collision-poly>
+                                        <point x="0.0632318" y="0.0668317" />
+                                        <point x="0.498829" y="0.039604" />
+                                        <point x="0.929742" y="0.0742574" />
+                                        <point x="0.922717" y="0.918317" />
+                                        <point x="0.498829" y="0.943069" />
+                                        <point x="0.0679157" y="0.928218" />
+                                    </collision-poly>
+                                </frame>
                             </animation>
                         </animation-folder>
                     </object-type>
@@ -268,11 +204,47 @@
                             </animation>
                         </animation-folder>
                     </object-type>
-                    <object-type name="TiledSprite" sid="223147698835348">
-                        <plugin id="TiledSprite" />
+                    <object-type name="Parede2" sid="545282938371079">
+                        <plugin id="Sprite" />
+                        <behaviors>
+                            <behavior-type name="Solid" sid="714258457914718">
+                                <behavior id="solid" />
+                            </behavior-type>
+                        </behaviors>
                         <animation-folder>
-                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="713810953315159" speed="5">
-                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\teste\Chão.png" />
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="940023114887460" speed="5">
+                                <frame duration="1" hotspotX="0.502304" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Catoom\CuiaHeads-Overpowered-Game\Artes\Mapa\parede10.png">
+                                    <collision-poly>
+                                        <point x="0.0632318" y="0.0668317" />
+                                        <point x="0.498829" y="0.039604" />
+                                        <point x="0.929742" y="0.0742574" />
+                                        <point x="0.922717" y="0.918317" />
+                                        <point x="0.498829" y="0.943069" />
+                                        <point x="0.0679157" y="0.928218" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                    <object-type name="Parede3" sid="958685238166509">
+                        <plugin id="Sprite" />
+                        <behaviors>
+                            <behavior-type name="Solid" sid="331010766885723">
+                                <behavior id="solid" />
+                            </behavior-type>
+                        </behaviors>
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="933753763613549" speed="5">
+                                <frame duration="1" hotspotX="0.502294" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Catoom\CuiaHeads-Overpowered-Game\Artes\Mapa\parede12.png">
+                                    <collision-poly>
+                                        <point x="0.0632318" y="0.0668317" />
+                                        <point x="0.498829" y="0.039604" />
+                                        <point x="0.929742" y="0.0742574" />
+                                        <point x="0.922717" y="0.918317" />
+                                        <point x="0.498829" y="0.943069" />
+                                        <point x="0.0679157" y="0.928218" />
+                                    </collision-poly>
+                                </frame>
                             </animation>
                         </animation-folder>
                     </object-type>
@@ -387,7 +359,7 @@
                         </behaviors>
                         <animation-folder>
                             <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="172313208896643" speed="5">
-                                <frame duration="1" hotspotX="0.0148295" hotspotY="0.534604" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Catoom\CuiaHeads-Overpowered-Game\Artes\espadoca.png">
+                                <frame duration="1" hotspotX="-0.334651" hotspotY="0.504514" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Catoom\CuiaHeads-Overpowered-Game\Artes\espadoca.png">
                                     <collision-poly>
                                         <point x="0.602076" y="0.310933" />
                                         <point x="0.961938" y="0.504514" />
@@ -402,24 +374,149 @@
                             </animation>
                         </animation-folder>
                     </object-type>
+                    <object-type name="Aisha" sid="332183002523043">
+                        <plugin id="Sprite" />
+                        <behaviors>
+                            <behavior-type name="Flash" sid="172155422465639">
+                                <behavior id="Flash" />
+                            </behavior-type>
+                        </behaviors>
+                        <container>
+                            <type>Aisha</type>
+                            <type>GatinhoCollision</type>
+                        </container>
+                        <animation-folder>
+                            <animation framecount="1" loop="1" name="idleFrente" pingpong="0" repeatcount="1" repeatto="0" sid="597805762352232" speed="5">
+                                <frame duration="1" hotspotX="0.497804" hotspotY="0.495529" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame idle2.png">
+                                    <collision-poly>
+                                        <point x="0.158126" y="0.0871833" />
+                                        <point x="0.70571" y="0.763785" />
+                                        <point x="0.734993" y="0.380775" />
+                                        <point x="0.327965" y="0.763785" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                            <animation framecount="4" loop="1" name="runFrente" pingpong="0" repeatcount="1" repeatto="0" sid="728413214153532" speed="5">
+                                <frame duration="1" hotspotX="0.509745" hotspotY="0.488611" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame front 2.png" />
+                                <frame duration="1" hotspotX="0.487805" hotspotY="0.500376" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame front 3.png" />
+                                <frame duration="1" hotspotX="0.509745" hotspotY="0.488611" />
+                                <frame duration="1" hotspotX="0.49635" hotspotY="0.499249" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame front 1.png">
+                                    <collision-poly>
+                                        <point x="0.129927" y="0.0668168" />
+                                        <point x="0.689051" y="0.76952" />
+                                        <point x="0.724088" y="0.372372" />
+                                        <point x="0.261314" y="0.76952" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                            <animation framecount="1" loop="1" name="idleCosta" pingpong="0" repeatcount="1" repeatto="0" sid="327105400207171" speed="5">
+                                <frame duration="1" hotspotX="0.510511" hotspotY="0.495529" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\back idle.png">
+                                    <collision-poly>
+                                        <point x="0.159159" y="0.0864381" />
+                                        <point x="0.722222" y="0.763785" />
+                                        <point x="0.749249" y="0.379285" />
+                                        <point x="0.334835" y="0.763785" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                            <animation framecount="4" loop="1" name="runCostas" pingpong="0" repeatcount="1" repeatto="0" sid="225425102889015" speed="5">
+                                <frame duration="1" hotspotX="0.510511" hotspotY="0.490413" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\back 3.png" />
+                                <frame duration="1" hotspotX="0.510511" hotspotY="0.486823" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\back 4.png" />
+                                <frame duration="1" hotspotX="0.510511" hotspotY="0.484694" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\back 2.png" />
+                                <frame duration="1" hotspotX="0.510511" hotspotY="0.488611" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\back 1.png" />
+                            </animation>
+                            <animation framecount="1" loop="1" name="idleDireito" pingpong="0" repeatcount="1" repeatto="0" sid="655231479200898" speed="5">
+                                <frame duration="1" hotspotX="0.590278" hotspotY="0.485423" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame idle.png">
+                                    <collision-poly>
+                                        <point x="0.28125" y="0.230321" />
+                                        <point x="0.696181" y="0.742711" />
+                                        <point x="0.824653" y="0.458455" />
+                                        <point x="0.381944" y="0.742711" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                            <animation framecount="4" loop="1" name="runDireito" pingpong="0" repeatcount="1" repeatto="0" sid="930783021561969" speed="5">
+                                <frame duration="1" hotspotX="0.549273" hotspotY="0.495529" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame2.png" />
+                                <frame duration="1" hotspotX="0.346939" hotspotY="0.525692" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame3.png" />
+                                <frame duration="1" hotspotX="0.549273" hotspotY="0.495529" />
+                                <frame duration="1" hotspotX="0.406699" hotspotY="0.515504" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame1.png" />
+                            </animation>
+                            <animation framecount="1" loop="1" name="idleEsquerdo" pingpong="0" repeatcount="1" repeatto="0" sid="712667934225743" speed="5">
+                                <frame duration="1" hotspotX="0.590278" hotspotY="0.484694" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\aisha animação\Frame idle.png">
+                                    <collision-poly>
+                                        <point x="0.618056" y="0.742711" />
+                                        <point x="0.175347" y="0.458455" />
+                                        <point x="0.303819" y="0.742711" />
+                                        <point x="0.71875" y="0.230321" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                            <animation framecount="4" loop="1" name="runEsquerdo" pingpong="0" repeatcount="1" repeatto="0" sid="551402627058558" speed="5">
+                                <frame duration="1" hotspotX="0.450727" hotspotY="0.495529">
+                                    <collision-poly>
+                                        <point x="1" y="1" />
+                                        <point x="0" y="1" />
+                                        <point x="0" y="0" />
+                                        <point x="1" y="0" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.653061" hotspotY="0.525692">
+                                    <collision-poly>
+                                        <point x="1" y="1" />
+                                        <point x="0" y="1" />
+                                        <point x="0" y="0" />
+                                        <point x="1" y="0" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.450727" hotspotY="0.495529">
+                                    <collision-poly>
+                                        <point x="1" y="1" />
+                                        <point x="0" y="1" />
+                                        <point x="0" y="0" />
+                                        <point x="1" y="0" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.593301" hotspotY="0.515504">
+                                    <collision-poly>
+                                        <point x="1" y="1" />
+                                        <point x="0" y="1" />
+                                        <point x="0" y="0" />
+                                        <point x="1" y="0" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </object-type>
                 </object-folder>
-            </object-folder>
-            <object-folder name="Botoes">
-                <object-type name="TryAgain" sid="268493124240705">
-                    <plugin id="Button" />
-                </object-type>
-                <object-type name="Return" sid="292306495370517">
-                    <plugin id="Button" />
-                </object-type>
+                <object-folder name="Inimigos">
+                    <object-type name="Rato" sid="661100960395258">
+                        <plugin id="Sprite" />
+                        <animation-folder>
+                            <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="470066580257766" speed="5">
+                                <frame duration="1" hotspotX="0.6375" hotspotY="1.51563" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Catoom\CuiaHeads-Overpowered-Game\Artes\Inimigos\Mice.png">
+                                    <collision-poly>
+                                        <point x="0.084788" y="0.208889" />
+                                        <point x="0.63591" y="0.102222" />
+                                        <point x="0.373441" y="0.894815" />
+                                        <point x="0.63591" y="0.882963" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                </object-folder>
             </object-folder>
             <object-folder name="Textos">
                 <object-type name="Text" sid="759207235183755">
                     <plugin id="Text" />
                 </object-type>
+                <object-type name="QntHordas" sid="109959323975370">
+                    <plugin id="Text" />
+                </object-type>
             </object-folder>
         </object-folder>
         <object-folder name="HUD">
-            <object-folder name="TopDown">
+            <object-folder name="PrincipalUI">
                 <object-type name="Vida" sid="507468877798716">
                     <plugin id="c2canvas" />
                     <texture />
@@ -431,6 +528,84 @@
                 <object-type name="AreaCartas" sid="132479196744755">
                     <plugin id="c2canvas" />
                     <texture original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\Carta de Alcance.png" />
+                </object-type>
+                <object-type name="UIBarraXP" sid="126337613692186">
+                    <plugin id="c2canvas" />
+                    <texture original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\UI\XPbar.png" />
+                </object-type>
+                <object-type name="UIFundoBarraXP" sid="984681699038896">
+                    <plugin id="c2canvas" />
+                    <texture original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\UI\XPbar bg.png" />
+                </object-type>
+                <object-type name="UIVida" sid="537388251780919">
+                    <plugin id="c2canvas" />
+                    <texture original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\UI\Hp.png" />
+                </object-type>
+                <object-type name="UIFundoVida" sid="967842380989065">
+                    <plugin id="c2canvas" />
+                    <texture original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\UI\Hp bg.png" />
+                </object-type>
+            </object-folder>
+            <object-folder name="GameOverScene">
+                <object-folder name="Botoes">
+                    <object-type name="TryAgain" sid="268493124240705">
+                        <plugin id="Button" />
+                    </object-type>
+                    <object-type name="AdvancedTextBox" sid="374665831004280">
+                        <plugin id="AdvTextBox" />
+                    </object-type>
+                </object-folder>
+                <object-type name="ButtonBackground" sid="820427131087642">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="127375869636376" speed="5">
+                            <frame duration="1" hotspotX="0.471449" hotspotY="-0.0229008" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Catoom\CuiaHeads-Overpowered-Game\Artes\GameOver\teste.png">
+                                <collision-poly>
+                                    <point x="0.0937042" y="0.389313" />
+                                    <point x="0.471449" y="0.24173" />
+                                    <point x="0.900439" y="0.300254" />
+                                    <point x="0.471449" y="0.743003" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="GameOverScreen" sid="740949511984885">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="775562102896648" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Catoom\CuiaHeads-Overpowered-Game\Artes\GameOver\GameOverScene.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="PauseLayer">
+                <object-type name="PauseIcons" sid="248312294909121">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="931699475869904" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\UI\UI icons\Pause.png">
+                                <collision-poly>
+                                    <point x="0.277344" y="0.277344" />
+                                    <point x="0.708984" y="0.291016" />
+                                    <point x="0.708496" y="0.5" />
+                                    <point x="0.696289" y="0.696289" />
+                                    <point x="0.246094" y="0.753906" />
+                                    <point x="0.224121" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.56" hotspotY="0.508" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Catoom\CuiaHeads-Overpowered-Game\Artes\UI\UI icons\play.png">
+                                <collision-poly>
+                                    <point x="0.20299" y="0.194636" />
+                                    <point x="0.898505" y="0.213893" />
+                                    <point x="0.897718" y="0.508253" />
+                                    <point x="0.878049" y="0.784732" />
+                                    <point x="0.152636" y="0.865887" />
+                                    <point x="0.11723" y="0.508253" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
                 </object-type>
                 <object-type name="PauseBotao" sid="302132088121029">
                     <plugin id="c2canvas" />
@@ -468,7 +643,7 @@
                     </animation>
                 </animation-folder>
             </object-type>
-            <object-type name="Sprite" sid="166844672112563">
+            <object-type name="ChooseText" sid="166844672112563">
                 <plugin id="Sprite" />
                 <behaviors>
                     <behavior-type name="Sine" sid="887082707877389">
@@ -510,54 +685,39 @@
                 </animation-folder>
             </object-type>
         </object-folder>
-        <object-type name="Mouse" sid="647187985110911">
-            <plugin id="Mouse" />
-        </object-type>
-        <object-type name="Keyboard" sid="851950665401997">
-            <plugin id="Keyboard" />
-        </object-type>
-        <object-type name="SVGImage" sid="820759492291505">
-            <plugin id="SVGImage" />
-        </object-type>
-        <object-type name="BuffText" sid="503690600036989">
-            <plugin id="Text" />
-            <instance-variables>
-                <instance-variable name="ID" sid="105652748836317" type="number" />
-            </instance-variables>
-            <behaviors>
-                <behavior-type name="Pin" sid="756103758169799">
-                    <behavior id="Pin" />
-                </behavior-type>
-            </behaviors>
-        </object-type>
-        <object-type name="Function" sid="688439712595466">
-            <plugin id="Function" />
-        </object-type>
-        <object-type name="Sprite3" sid="248312294909121">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="931699475869904" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\UI\UI icons\Pause.png">
-                        <collision-poly>
-                            <point x="0.277344" y="0.277344" />
-                            <point x="0.708984" y="0.291016" />
-                            <point x="0.708496" y="0.5" />
-                            <point x="0.696289" y="0.696289" />
-                            <point x="0.246094" y="0.753906" />
-                            <point x="0.224121" y="0.5" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="Text2" sid="416203195721893">
-            <plugin id="Text" />
-            <behaviors>
-                <behavior-type name="Sine" sid="944167709616729">
-                    <behavior id="Sin" />
-                </behavior-type>
-            </behaviors>
-        </object-type>
+        <object-folder name="SlaOqEIsso">
+            <object-type name="BuffText" sid="503690600036989">
+                <plugin id="Text" />
+                <instance-variables>
+                    <instance-variable name="ID" sid="105652748836317" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Pin" sid="756103758169799">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
+            <object-type name="Function" sid="688439712595466">
+                <plugin id="Function" />
+            </object-type>
+            <object-type name="Keyboard" sid="851950665401997">
+                <plugin id="Keyboard" />
+            </object-type>
+            <object-type name="Mouse" sid="647187985110911">
+                <plugin id="Mouse" />
+            </object-type>
+            <object-type name="SVGImage" sid="820759492291505">
+                <plugin id="SVGImage" />
+            </object-type>
+            <object-type name="Text2" sid="416203195721893">
+                <plugin id="Text" />
+                <behaviors>
+                    <behavior-type name="Sine" sid="944167709616729">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
+            </object-type>
+        </object-folder>
     </object-folder>
     <families />
     <layout-folder>

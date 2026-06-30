@@ -5,7 +5,7 @@
     <events>
         <comment>===========&#x0D;&#x0A;Variáveis para o Sistema de XP e Hordas&#x0D;&#x0A;===========</comment>
         <variable constant="0" name="SorteioSpawn" sid="611282055887532" static="0" type="number">0</variable>
-        <variable constant="0" name="Horda" sid="393379827816464" static="0" type="number">4</variable>
+        <variable constant="0" name="Horda" sid="393379827816464" static="0" type="number">1</variable>
         <variable comment="Segundos para spawnar algum bicho (quanto menor = mais bicho)" constant="0" name="TempoSpawn" sid="289716551127425" static="0" type="number">1</variable>
         <variable constant="0" name="XP" sid="688252286558378" static="0" type="number">0.1</variable>
         <variable constant="0" name="XPMax" sid="734539505667128" static="0" type="number">10</variable>
@@ -208,7 +208,7 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="4" name="Set animation" sid="445711841712122" type="GatinhoSprite">
+                                <action id="4" name="Set animation" sid="445711841712122" type="Aisha">
                                     <param id="0" name="Animation">&quot;runFrente&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
@@ -224,7 +224,7 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="4" name="Set animation" sid="332643709193365" type="GatinhoSprite">
+                                <action id="4" name="Set animation" sid="332643709193365" type="Aisha">
                                     <param id="0" name="Animation">&quot;runCostas&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
@@ -240,7 +240,7 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="4" name="Set animation" sid="908923415200870" type="GatinhoSprite">
+                                <action id="4" name="Set animation" sid="908923415200870" type="Aisha">
                                     <param id="0" name="Animation">&quot;runEsquerdo&quot;</param>
                                     <param id="1" name="From">0</param>
                                 </action>
@@ -256,7 +256,7 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="4" name="Set animation" sid="810611508750889" type="GatinhoSprite">
+                                <action id="4" name="Set animation" sid="810611508750889" type="Aisha">
                                     <param id="0" name="Animation">&quot;runDireito&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
@@ -269,9 +269,27 @@
                         <condition id="-22" name="Else" sid="700502207860503" type="System" />
                     </conditions>
                     <actions>
-                        <action id="4" name="Set animation" sid="448036208518414" type="GatinhoSprite">
+                        <action id="4" name="Set animation" sid="448036208518414" type="Aisha">
                             <param id="0" name="Animation">&quot;idleFrente&quot;</param>
                             <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="289769277014693">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="871247936197076" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="464539698788838" type="System">
+                            <param id="0" name="First value">Vida</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">VidaMax</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="332771093784950" type="System">
+                            <param id="0" name="Variable">Vida</param>
+                            <param id="1" name="Value">VidaMax * 0.05</param>
                         </action>
                     </actions>
                 </event-block>
@@ -317,20 +335,21 @@
                         <condition id="0" name="On collision with another object" sid="178411179169282" type="InimigoCollision">
                             <param id="0" name="Object">GatinhoCollision</param>
                         </condition>
-                        <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="464634199065824" type="GatinhoCollision" />
+                        <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="649748001697388" type="Aisha" />
                     </conditions>
                     <actions>
                         <action id="-11" name="Subtract from" sid="618806463871474" type="System">
                             <param id="0" name="Variable">Vida</param>
-                            <param id="1" name="Value">max(1, InimigoCollision.InimigoDano - BuffDefesa)</param>
+                            <param id="1" name="Value">max(1, InimigoCollision.InimigoDano - (BuffDefesa * 0.3))</param>
                         </action>
-                        <action behavior="Flash" id="0" name="Flash" sid="333733143347031" type="GatinhoSprite">
+                        <action behavior="Flash" id="0" name="Flash" sid="333733143347031" type="Aisha">
                             <param id="0" name="&apos;On&apos; time">0.1</param>
                             <param id="1" name="&apos;Off&apos; time">0.1</param>
-                            <param id="2" name="Duration">1</param>
+                            <param id="2" name="Duration">0.6</param>
                         </action>
                     </actions>
                 </event-block>
+                <comment>===========&#x0D;&#x0A;SISTEMA DOS INIMIGOS E HORDAS !!!&#x0D;&#x0A;===========</comment>
                 <event-block sid="896282469204256">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="217765584173967" type="System">
@@ -346,8 +365,8 @@
                         <action id="-3" name="Create object" sid="711300215142905" type="System">
                             <param id="0" name="Object to create">InimigoCollision</param>
                             <param id="1" name="Layer">0</param>
-                            <param id="2" name="X">GatinhoCollision.X + cos(random(360)) * random(800, 1000)</param>
-                            <param id="3" name="Y">GatinhoCollision.Y + sin(random(360)) * random(800, 1000)</param>
+                            <param id="2" name="X">GatinhoCollision.X + cos(random(360)) * random(800, 1000) / LayoutScale</param>
+                            <param id="3" name="Y">GatinhoCollision.Y + sin(random(360)) * random(800, 1000) / LayoutScale</param>
                         </action>
                         <action id="-9" name="Set value" sid="506051450969427" type="System">
                             <param id="0" name="Variable">SorteioSpawn</param>
@@ -369,9 +388,15 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="-5" name="Set width" sid="955144740902788" type="InimigoCollision">
+                                    <param id="0" name="Width">32</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="720004620279636" type="InimigoCollision">
+                                    <param id="0" name="Height">16</param>
+                                </action>
                                 <action id="-10" name="Set value" sid="673162733681517" type="InimigoCollision">
                                     <param id="0" name="Instance variable">InimigoVida</param>
-                                    <param id="1" name="Value">5</param>
+                                    <param id="1" name="Value">4</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="780569853073773" type="InimigoCollision">
                                     <param id="0" name="Instance variable">InimigoVelocidade</param>
@@ -399,7 +424,6 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <comment>Ratos</comment>
                                 <event-block sid="248147811346912">
                                     <conditions>
                                         <condition id="-14" name="Compare variable" sid="752449121759272" type="System">
@@ -409,9 +433,15 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="-5" name="Set width" sid="329819849607739" type="InimigoCollision">
+                                            <param id="0" name="Width">32</param>
+                                        </action>
+                                        <action id="-6" name="Set height" sid="915724431445479" type="InimigoCollision">
+                                            <param id="0" name="Height">16</param>
+                                        </action>
                                         <action id="-10" name="Set value" sid="697848146340965" type="InimigoCollision">
                                             <param id="0" name="Instance variable">InimigoVida</param>
-                                            <param id="1" name="Value">5</param>
+                                            <param id="1" name="Value">4</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="491062907382019" type="InimigoCollision">
                                             <param id="0" name="Instance variable">InimigoVelocidade</param>
@@ -423,7 +453,6 @@
                                         </action>
                                     </actions>
                                 </event-block>
-                                <comment>Cães</comment>
                                 <event-block sid="716806428667228">
                                     <conditions>
                                         <condition id="-14" name="Compare variable" sid="694269316120703" type="System">
@@ -433,6 +462,16 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="4" name="Set animation" sid="834595438291196" type="InimigoCollision">
+                                            <param id="0" name="Animation">&quot;Cachorro&quot;</param>
+                                            <param id="1" name="From">0</param>
+                                        </action>
+                                        <action id="-5" name="Set width" sid="953921980201558" type="InimigoCollision">
+                                            <param id="0" name="Width">64</param>
+                                        </action>
+                                        <action id="-6" name="Set height" sid="842635314741220" type="InimigoCollision">
+                                            <param id="0" name="Height">48</param>
+                                        </action>
                                         <action id="-10" name="Set value" sid="503972404871686" type="InimigoCollision">
                                             <param id="0" name="Instance variable">InimigoVida</param>
                                             <param id="1" name="Value">10</param>
@@ -444,6 +483,174 @@
                                         <action id="-10" name="Set value" sid="972802865624986" type="InimigoCollision">
                                             <param id="0" name="Instance variable">InimigoDano</param>
                                             <param id="1" name="Value">5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Spawna - Cães, Pombos</comment>
+                        <event-block sid="785009073522666">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="954525304406397" type="System">
+                                    <param id="0" name="Variable">Horda</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">15</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="961883405199843" type="System">
+                                    <param id="0" name="Variable">Horda</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">25</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="943321245875405">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="927422145649542" type="System">
+                                            <param id="0" name="Variable">SorteioSpawn</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">90</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="414417219202606" type="InimigoCollision">
+                                            <param id="0" name="Animation">&quot;Cachorro&quot;</param>
+                                            <param id="1" name="From">0</param>
+                                        </action>
+                                        <action id="-5" name="Set width" sid="838572527381310" type="InimigoCollision">
+                                            <param id="0" name="Width">64</param>
+                                        </action>
+                                        <action id="-6" name="Set height" sid="617166754855620" type="InimigoCollision">
+                                            <param id="0" name="Height">48</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="253354216261714" type="InimigoCollision">
+                                            <param id="0" name="Instance variable">InimigoVida</param>
+                                            <param id="1" name="Value">10</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="988121406261819" type="InimigoCollision">
+                                            <param id="0" name="Instance variable">InimigoVelocidade</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="741942131925026" type="InimigoCollision">
+                                            <param id="0" name="Instance variable">InimigoDano</param>
+                                            <param id="1" name="Value">5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="664177108993908">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="575565650361439" type="System">
+                                            <param id="0" name="Variable">SorteioSpawn</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">90</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="177613493870183" type="InimigoCollision">
+                                            <param id="0" name="Animation">&quot;Pombo&quot;</param>
+                                            <param id="1" name="From">0</param>
+                                        </action>
+                                        <action id="-5" name="Set width" sid="797731439981687" type="InimigoCollision">
+                                            <param id="0" name="Width">150</param>
+                                        </action>
+                                        <action id="-6" name="Set height" sid="507744877648070" type="InimigoCollision">
+                                            <param id="0" name="Height">100</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="907766669259383" type="InimigoCollision">
+                                            <param id="0" name="Instance variable">InimigoVida</param>
+                                            <param id="1" name="Value">4</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="380248988108677" type="InimigoCollision">
+                                            <param id="0" name="Instance variable">InimigoVelocidade</param>
+                                            <param id="1" name="Value">6</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="983904592372008" type="InimigoCollision">
+                                            <param id="0" name="Instance variable">InimigoDano</param>
+                                            <param id="1" name="Value">8</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Spawna - Pombos, Vassouras</comment>
+                        <event-block sid="158113879961713">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="196621543534979" type="System">
+                                    <param id="0" name="Variable">Horda</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">15</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="469359018422050" type="System">
+                                    <param id="0" name="Variable">Horda</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">25</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="947508188766236">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="169490659633938" type="System">
+                                            <param id="0" name="Variable">SorteioSpawn</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">80</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="153249156466573" type="InimigoCollision">
+                                            <param id="0" name="Animation">&quot;Pombo&quot;</param>
+                                            <param id="1" name="From">0</param>
+                                        </action>
+                                        <action id="-5" name="Set width" sid="595942371455387" type="InimigoCollision">
+                                            <param id="0" name="Width">150</param>
+                                        </action>
+                                        <action id="-6" name="Set height" sid="901751051411760" type="InimigoCollision">
+                                            <param id="0" name="Height">100</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="828826364342051" type="InimigoCollision">
+                                            <param id="0" name="Instance variable">InimigoVida</param>
+                                            <param id="1" name="Value">4</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="919763815400403" type="InimigoCollision">
+                                            <param id="0" name="Instance variable">InimigoVelocidade</param>
+                                            <param id="1" name="Value">6</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="810756599632567" type="InimigoCollision">
+                                            <param id="0" name="Instance variable">InimigoDano</param>
+                                            <param id="1" name="Value">8</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="599603431172967">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="723061240695814" type="System">
+                                            <param id="0" name="Variable">SorteioSpawn</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Value">80</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="778779092025848" type="InimigoCollision">
+                                            <param id="0" name="Animation">&quot;Vassoura&quot;</param>
+                                            <param id="1" name="From">0</param>
+                                        </action>
+                                        <action id="-5" name="Set width" sid="863190865587110" type="InimigoCollision">
+                                            <param id="0" name="Width">150</param>
+                                        </action>
+                                        <action id="-6" name="Set height" sid="958134681229823" type="InimigoCollision">
+                                            <param id="0" name="Height">250</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="995607491122775" type="InimigoCollision">
+                                            <param id="0" name="Instance variable">InimigoVida</param>
+                                            <param id="1" name="Value">20</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="628695318341517" type="InimigoCollision">
+                                            <param id="0" name="Instance variable">InimigoVelocidade</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="906319347375444" type="InimigoCollision">
+                                            <param id="0" name="Instance variable">InimigoDano</param>
+                                            <param id="1" name="Value">8</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -469,6 +676,32 @@
                         <action id="-23" name="Move at angle" sid="802648838464809" type="InimigoCollision">
                             <param id="0" name="Angle">angle(Self.X, Self.Y, GatinhoCollision.X, GatinhoCollision.Y)</param>
                             <param id="1" name="Distance">InimigoCollision.InimigoVelocidade</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="981052589646768">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="124619154235887" type="InimigoCollision">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">GatinhoCollision.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="929934865754636" type="InimigoCollision">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="884136934361433">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="661882983898293" type="InimigoCollision">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="X co-ordinate">GatinhoCollision.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="801784637412907" type="InimigoCollision">
+                            <param id="0" name="State">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -851,8 +1084,8 @@
                                     <param id="1" name="Visibility">0</param>
                                 </action>
                                 <action id="-3" name="Set position" sid="602041887194345" type="GatinhoCollision">
-                                    <param id="0" name="X">random(1200, 4800)</param>
-                                    <param id="1" name="Y">random(1000, 3600)</param>
+                                    <param id="0" name="X">random(15040, 17312)</param>
+                                    <param id="1" name="Y">random(13264, 15520)</param>
                                 </action>
                                 <action id="0" name="Set text" sid="525811716508997" type="Text">
                                     <param id="0" name="Text">&quot;You survived until the horde: &quot; &amp; Horda</param>
@@ -862,6 +1095,20 @@
                                 </action>
                                 <action id="-15" name="Set visible" sid="572882914185449" type="Sword">
                                     <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="978949710343918">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="811670163945593" type="System">
+                                    <param id="0" name="Variable">Vida</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="121941509784598" type="Text">
+                                    <param id="0" name="Text">&quot;You survived until the horde: &quot; &amp; Horda</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -875,7 +1122,7 @@
                             </conditions>
                             <actions>
                                 <action id="-5" name="Set width" sid="566100648353702" type="Vida">
-                                    <param id="0" name="Width">(Vida / VidaMax) * 400</param>
+                                    <param id="0" name="Width">(Vida / VidaMax) * 382</param>
                                 </action>
                                 <action id="-5" name="Set width" sid="642837600720630" type="BarraXP">
                                     <param id="0" name="Width">(XP / XPMax) * 340</param>
@@ -884,9 +1131,13 @@
                                     <param id="0" name="Width">130 * clamp(TamEspada + (BuffTamEspada * 0.4), 1, 2.5)</param>
                                     <param id="1" name="Height">16 * clamp(TamEspada + (BuffTamEspada * 0.4), 1, 2.5)</param>
                                 </action>
+                                <action id="-7" name="Set size" sid="467873011189426" type="Espada">
+                                    <param id="0" name="Width">180 * (TamEspada + (BuffTamEspada * 0.4))</param>
+                                    <param id="1" name="Height">34 * (TamEspada + (BuffTamEspada * 0.4))</param>
+                                </action>
                                 <action id="-7" name="Set size" sid="690386310744965" type="Sword">
-                                    <param id="0" name="Width">140 * clamp(TamEspada + (BuffTamEspada * 0.4), 1, 2.5)</param>
-                                    <param id="1" name="Height">40 * clamp(TamEspada + (BuffTamEspada * 0.4), 1, 2.5)</param>
+                                    <param id="0" name="Width">140 * (TamEspada + (BuffTamEspada * 0.4))</param>
+                                    <param id="1" name="Height">40 * (TamEspada + (BuffTamEspada * 0.4))</param>
                                 </action>
                                 <action id="-20" name="Set layout scale" sid="307825660662154" type="System">
                                     <param id="0" name="Scale">lerp(LayoutScale, 1 / (TamEspada + (BuffTamEspada * 0.4)), 0.05)</param>
@@ -898,9 +1149,12 @@
                                 <action id="9" name="Set scale" sid="250927644585844" type="ImaColeta">
                                     <param id="0" name="Scale">1 + (BuffTamEspada * 0.4)</param>
                                 </action>
-                                <action id="-4" name="Set position to another object" sid="682098267792075" type="GatinhoSprite">
+                                <action id="-4" name="Set position to another object" sid="682098267792075" type="Aisha">
                                     <param id="0" name="Object">GatinhoCollision</param>
                                     <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                                <action id="0" name="Set text" sid="700976276322409" type="QntHordas">
+                                    <param id="0" name="Text">&quot;&quot; &amp; Horda</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -927,14 +1181,14 @@
                                 </action>
                                 <action id="-11" name="Subtract from" sid="669396077391259" type="System">
                                     <param id="0" name="Variable">TempoSpawn</param>
-                                    <param id="1" name="Value">0.1</param>
+                                    <param id="1" name="Value">max(0.2, TempoSpawn - 0.05)</param>
                                 </action>
                             </actions>
                             <sub-events>
                                 <event-block sid="284543934532830">
                                     <conditions>
                                         <condition id="-8" name="Compare two values" sid="668061901407309" type="System">
-                                            <param id="0" name="First value">Horda %  5</param>
+                                            <param id="0" name="First value">Horda %  3</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Second value">0</param>
                                         </condition>
@@ -953,7 +1207,7 @@
                                             <param id="2" name="X">38</param>
                                             <param id="3" name="Y">-17</param>
                                         </action>
-                                        <action id="-15" name="Set visible" sid="264959063893398" type="GatinhoSprite">
+                                        <action id="-15" name="Set visible" sid="264959063893398" type="Aisha">
                                             <param id="0" name="Visibility">1</param>
                                         </action>
                                         <action id="-9" name="Set value" sid="106511830288253" type="System">

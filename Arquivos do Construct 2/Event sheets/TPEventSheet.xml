@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>TPEventSheet</name>
     <events>
+        <variable constant="0" name="isPaused" sid="548053204807016" static="0" type="number">0</variable>
         <comment>===========&#x0D;&#x0A;Variáveis para as MÚSICAS e SONS&#x0D;&#x0A;===========</comment>
         <comment>===========&#x0D;&#x0A;MÚSICAS&#x0D;&#x0A;===========</comment>
         <variable constant="0" name="MusicaAtivo" sid="812856168393650" static="0" type="number">1</variable>
@@ -1069,88 +1070,156 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="755878682434266" title="BotaoPause">
+            <sub-events>
+                <event-block any="1" sid="328536767920792">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="719903145074105" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">PauseIcons</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="347437120235916" type="Keyboard">
+                            <param id="0" name="Key">80</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="911034909113602">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="126762321131646" type="PauseIcons">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">0</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="172447409333929" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="968740537202041" type="System">
+                                    <param id="0" name="Variable">isPaused</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="670378081898098">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="847233421926405" type="PauseIcons">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">1</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="937298686143556" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="843620193740839" type="System">
+                                    <param id="0" name="Variable">isPaused</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block any="1" sid="700481020178031">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="759986619087299" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">PauseIcons</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="934167001996360" type="Keyboard">
+                            <param id="0" name="Key">80</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="507968000401033">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="743578837570602" type="PauseIcons">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">0</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="874428993354517" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="559240873080747" type="System">
+                                    <param id="0" name="Variable">isPaused</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="727761012337167">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="470974710931285" type="PauseIcons">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">1</param>
+                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="449192669752895" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="481491623798469" type="System">
+                                    <param id="0" name="Variable">isPaused</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="237447725583408">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="689685188013562" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="937002086281387" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="846004706552609" type="System">
+                            <param id="0" name="Group name">&quot;Sistema - Inimigos&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="507284209376878" type="System">
+                            <param id="0" name="Layer">&quot;PausaScene&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="424373162061495" type="PauseIcons">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action disabled="1" id="-13" name="Set time scale" sid="830726235242608" type="System">
+                            <param id="0" name="Time scale">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="607507405165551">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="799878127509064" type="System">
+                            <param id="0" name="Variable">isPaused</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="313201195220776" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="828432258085174" type="System">
+                            <param id="0" name="Group name">&quot;Sistema - Inimigos&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="295178194619483" type="System">
+                            <param id="0" name="Layer">&quot;PausaScene&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="735426024176569" type="PauseIcons">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action disabled="1" id="-13" name="Set time scale" sid="999134722005799" type="System">
+                            <param id="0" name="Time scale">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="318817541762017" title="Sistema Geral">
             <sub-events>
                 <event-group description="" sid="119782121193751" title="Tela Inicial - Botões">
                     <sub-events>
-                        <event-group description="" sid="755878682434266" title="BotaoPause">
-                            <sub-events>
-                                <event-block sid="328536767920792">
-                                    <conditions>
-                                        <condition id="6" name="On object clicked" sid="719903145074105" type="Mouse">
-                                            <param id="0" name="Mouse button">0</param>
-                                            <param id="1" name="Click type">0</param>
-                                            <param id="2" name="Object clicked">PauseIcons</param>
-                                        </condition>
-                                        <condition id="3" name="Compare frame" sid="126762321131646" type="PauseIcons">
-                                            <param id="0" name="Comparison">0</param>
-                                            <param id="1" name="Number">0</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-13" name="Set time scale" sid="830726235242608" type="System">
-                                            <param id="0" name="Time scale">0</param>
-                                        </action>
-                                        <action id="-12" name="Set group active" sid="846004706552609" type="System">
-                                            <param id="0" name="Group name">&quot;Sistema - Inimigos&quot;</param>
-                                            <param id="1" name="State">0</param>
-                                        </action>
-                                        <action id="5" name="Set frame" sid="424373162061495" type="PauseIcons">
-                                            <param id="0" name="Frame number">1</param>
-                                        </action>
-                                        <action id="-15" name="Set visible" sid="204056061934171" type="Pause">
-                                            <param id="0" name="Visibility">1</param>
-                                        </action>
-                                        <action id="-15" name="Set visible" sid="453001110320717" type="Pause2">
-                                            <param id="0" name="Visibility">1</param>
-                                        </action>
-                                        <action id="-15" name="Set visible" sid="366160951814761" type="Pause3">
-                                            <param id="0" name="Visibility">1</param>
-                                        </action>
-                                        <action id="-15" name="Set visible" sid="733309415039186" type="Pause4">
-                                            <param id="0" name="Visibility">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="588575794254594">
-                                    <conditions>
-                                        <condition id="6" name="On object clicked" sid="838917150618608" type="Mouse">
-                                            <param id="0" name="Mouse button">0</param>
-                                            <param id="1" name="Click type">0</param>
-                                            <param id="2" name="Object clicked">PauseIcons</param>
-                                        </condition>
-                                        <condition id="3" name="Compare frame" sid="847233421926405" type="PauseIcons">
-                                            <param id="0" name="Comparison">0</param>
-                                            <param id="1" name="Number">1</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-13" name="Set time scale" sid="878680347324986" type="System">
-                                            <param id="0" name="Time scale">1</param>
-                                        </action>
-                                        <action id="-12" name="Set group active" sid="646111996854050" type="System">
-                                            <param id="0" name="Group name">&quot;Sistema - Inimigos&quot;</param>
-                                            <param id="1" name="State">1</param>
-                                        </action>
-                                        <action id="5" name="Set frame" sid="735426024176569" type="PauseIcons">
-                                            <param id="0" name="Frame number">0</param>
-                                        </action>
-                                        <action id="-15" name="Set visible" sid="568484456013867" type="Pause">
-                                            <param id="0" name="Visibility">0</param>
-                                        </action>
-                                        <action id="-15" name="Set visible" sid="907349507710629" type="Pause2">
-                                            <param id="0" name="Visibility">0</param>
-                                        </action>
-                                        <action id="-15" name="Set visible" sid="178452255648552" type="Pause3">
-                                            <param id="0" name="Visibility">0</param>
-                                        </action>
-                                        <action id="-15" name="Set visible" sid="636082960047742" type="Pause4">
-                                            <param id="0" name="Visibility">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-group>
                         <event-group description="" sid="281860540949104" title="Animações">
                             <sub-events>
                                 <event-block sid="732351799445972">
@@ -1215,10 +1284,6 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-4" name="Set layer visible" sid="777750079335947" type="System">
-                                            <param id="0" name="Layer">5</param>
-                                            <param id="1" name="Visibility">1</param>
-                                        </action>
                                         <action id="-4" name="Set layer visible" sid="397586384193182" type="System">
                                             <param id="0" name="Layer">4</param>
                                             <param id="1" name="Visibility">0</param>
@@ -1248,6 +1313,10 @@
                                             <param id="2" name="Loop">0</param>
                                             <param id="3" name="Volume">BARULHOS</param>
                                             <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                        </action>
+                                        <action id="-12" name="Set group active" sid="434866939437052" type="System">
+                                            <param id="0" name="Group name">&quot;BotaoPause&quot;</param>
+                                            <param id="1" name="State">1</param>
                                         </action>
                                     </actions>
                                 </event-block>

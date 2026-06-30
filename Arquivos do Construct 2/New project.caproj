@@ -596,12 +596,12 @@
                         <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="931699475869904" speed="0">
                             <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\bretu\OneDrive\Documentos\GitHub\CuiaHeads-Overpowered-Game\Artes\UI\UI icons\Pause.png">
                                 <collision-poly>
-                                    <point x="0.277344" y="0.277344" />
-                                    <point x="0.708984" y="0.291016" />
-                                    <point x="0.708496" y="0.5" />
-                                    <point x="0.696289" y="0.696289" />
-                                    <point x="0.246094" y="0.753906" />
-                                    <point x="0.224121" y="0.5" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="0.54" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0.54" />
                                 </collision-poly>
                             </frame>
                             <frame duration="0" hotspotX="0" hotspotY="0" original-source="C:\Users\carlo\OneDrive\Ambiente de Trabalho\Catoom\CuiaHeads-Overpowered-Game\Artes\UI\UI icons\play.png">
